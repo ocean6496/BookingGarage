@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html lang="en">
 
 <head>
-    <title>Material Login Form a Responsive Widget Template :: w3layouts</title>
+    <title>Login Page</title>
     <!-- meta tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,10 +31,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 <body>
-    <h1>Material Login Form</h1>
+    <h1>Booking Garage</h1>
     <div class=" w3l-login-form">
         <h2>Login Here</h2>
-        <form action="#" method="POST">
+        <form action="/admin" method="get">
 
             <div class=" w3l-form-group">
                 <label>Username:</label>
