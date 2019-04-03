@@ -18,9 +18,20 @@ class UsersTableSeeder extends Seeder
         
         $faker = Faker\Factory::create();
         $limit = 10;
-        $role_id = [1,2,3];
+        $role_id = [2,3];
  
-        for ($i = 0; $i < $limit; $i++) {
+        User::create([
+                'fullname' => 'ocean',
+                'username' => 'admin@gmail.com',
+                'password' => Hash::make(123456),         
+                'email' => $faker->unique()->safeEmail,
+                'role_id' => 1,
+                'address' => $faker->address,
+                'phone' => $faker->phoneNumber,
+                'active' => 0,
+            ]);
+
+        for ($i = 1; $i < $limit; $i++) {
             User::create([
                 'fullname' => $faker->name,
                 'username' => $faker->username,
