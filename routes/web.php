@@ -36,6 +36,16 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function() {
 		'as' => 'admin.index'
 	]);
 
+	Route::get('/admin/profile', [
+		'uses' => 'IndexController@getProfile', 
+		'as' => 'admin.profile'
+	]);
+
+	Route::get('/admin/garage', [
+		'uses' => 'GarageController@index',
+		'as' => 'admin.garage'
+	]);
+
 });
 
 

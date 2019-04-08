@@ -12,7 +12,7 @@
                 </li>
                 
                 <li class="sub-menu">
-                    <a href="javascript:;">
+                    <a href="{{ route('admin.garage') }}">
                         <i class="fa fa-book"></i>
                         <span>Garage</span>
                     </a>

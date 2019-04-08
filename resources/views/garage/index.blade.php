@@ -358,7 +358,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		
 				<div class="gallery-grids">
 					<div class="col-md-4 baner-top">
-						<a href="images/1.jpg" class="b-link-stripe b-animate-go  swipebox">
+						<a href="/templates/garage/images/1.jpg" class="b-link-stripe b-animate-go  swipebox">
 							<div class="gal-spin-effect vertical ">
 								<img src="/templates/garage/images/1.jpg" alt=" " />
 								<div class="gal-text-box">
@@ -376,7 +376,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-4 baner-top">
 						<a href="/templates/garage/images/2.jpg" class="b-link-stripe b-animate-go  swipebox">
 							<div class="gal-spin-effect vertical ">
-								<img src="images/2.jpg" alt=" " />
+								<img src="/templates/garage/images/2.jpg" alt=" " />
 								<div class="gal-text-box">
 									<div class="info-gal-con">
 										<h4>Car Towing</h4>
@@ -392,7 +392,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-4 baner-top ban-mar">
 						<a href="/templates/garage/images/3.jpg" class="b-link-stripe b-animate-go  swipebox">
 							<div class="gal-spin-effect vertical ">
-								<img src="images/3.jpg" alt=" " />
+								<img src="/templates/garage/images/3.jpg" alt=" " />
 								<div class="gal-text-box">
 									<div class="info-gal-con">
 										<h4>Car Towing</h4>
@@ -408,7 +408,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-4 baner-top ban-mar">
 						<a href="/templates/garage/images/4.jpg" class="b-link-stripe b-animate-go  swipebox">
 							<div class="gal-spin-effect vertical ">
-								<img src="images/4.jpg" alt=" " />
+								<img src="/templates/garage/images/4.jpg" alt=" " />
 								<div class="gal-text-box">
 									<div class="info-gal-con">
 										<h4>Car Towing</h4>
@@ -424,7 +424,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-4 baner-top ban-mar">
 						<a href="/templates/garage/images/5.jpg" class="b-link-stripe b-animate-go  swipebox">
 							<div class="gal-spin-effect vertical ">
-								<img src="images/5.jpg" alt=" " />
+								<img src="/templates/garage/images/5.jpg" alt=" " />
 								<div class="gal-text-box">
 									<div class="info-gal-con">
 										<h4>Car Towing</h4>
@@ -440,7 +440,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-4 baner-top ban-mar">
 						<a href="/templates/garage/images/6.jpg" class="b-link-stripe b-animate-go  swipebox">
 							<div class="gal-spin-effect vertical ">
-								<img src="images/6.jpg" alt=" " />
+								<img src="/templates/garage/images/6.jpg" alt=" " />
 								<div class="gal-text-box">
 									<div class="info-gal-con">
 										<h4>Car Towing</h4>
@@ -456,7 +456,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-4 baner-top">
 						<a href="/templates/garage/images/7.jpg" class="b-link-stripe b-animate-go  swipebox">
 							<div class="gal-spin-effect vertical ">
-								<img src="images/7.jpg" alt=" " />
+								<img src="/templates/garage/images/7.jpg" alt=" " />
 								<div class="gal-text-box">
 									<div class="info-gal-con">
 										<h4>Car Towing</h4>
@@ -472,7 +472,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-4 baner-top">
 						<a href="/templates/garage/images/8.jpg" class="b-link-stripe b-animate-go  swipebox">
 							<div class="gal-spin-effect vertical ">
-								<img src="images/8.jpg" alt=" " />
+								<img src="/templates/garage/images/8.jpg" alt=" " />
 								<div class="gal-text-box">
 									<div class="info-gal-con">
 										<h4>Car Towing</h4>
@@ -488,7 +488,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="col-md-4 baner-top">
 						<a href="/templates/garage/images/9.jpg" class="b-link-stripe b-animate-go  swipebox">
 							<div class="gal-spin-effect vertical ">
-								<img src="images/9.jpg" alt=" " />
+								<img src="/templates/garage/images/9.jpg" alt=" " />
 								<div class="gal-text-box">
 									<div class="info-gal-con">
 										<h4>Car Towing</h4>
@@ -542,11 +542,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //newsletter -->
 <!-- map -->
 		<div class="map agileits">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26359195.17562375!2d-113.7156245614499!3d36.2473834534249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited+States!5e0!3m2!1sen!2sin!4v1471497559566"  frameborder="0" style="border:0" allowfullscreen></iframe>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d3833.883971589609!2d108.14993639993541!3d16.07150969359228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d16.070566!2d108.1543995!4m5!1s0x314218d68e8ccb03%3A0x64dc2cb3e38bbdaf!2zNTQgTmd1eeG7hW4gTMawxqFuZyBC4bqxbmcsIEhvw6AgS2jDoW5oIELhuq9jLCBMacOqbiBDaGnhu4N1LCDEkMOgIE7hurVuZyA1NTAwMDA!3m2!1d16.0738013!2d108.1499142!5e0!3m2!1svi!2s!4v1554518809914!5m2!1svi!2s" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 				<div class="map-grids">
 					<div class="map-grid-left">
 						<ul>
-								<li class="dot"><i class="fa fa-location-arrow" aria-hidden="true"></i> BD 2 Mars, N1 136, Morocco Casablanca</li>
+								<li class="dot"><i class="fa fa-location-arrow" aria-hidden="true"></i>54 Nguyen Luong Bang, Da Nang</li>
 								<li class="mobile"><i class="fa fa-volume-control-phone" aria-hidden="true"></i> +212 522 275 386</li>
 								<li class="mes"><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">Example @mail.com</a></li>
 						</ul>
