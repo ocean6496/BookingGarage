@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\Garage;
+use App\Models\User;
 
 class GaragesTableSeeder extends Seeder
 {
@@ -18,7 +19,9 @@ class GaragesTableSeeder extends Seeder
 
         $faker = Faker\Factory::create();
 
-        for ($i=0; $i < 5; $i++) { 
+        $garages =  User::where('role_id', 2)->get(); 
+
+        foreach ($garages as $garage) {
         	Garage::create([
         		'address' => $faker->address,
         		'phone' => $faker->phoneNumber,

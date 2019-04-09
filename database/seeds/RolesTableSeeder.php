@@ -21,9 +21,13 @@ class RolesTableSeeder extends Seeder
         		'description' => 'managment full system'
         	],
         	[
-        		'name' => 'user',
-        		'description' => 'people use system'
-        	]
+        		'name' => 'garage',
+        		'description' => 'garage use system'
+        	],
+            [
+                'name' => 'user',
+                'description' => 'people use system'
+            ],
         ]);
     }
 }

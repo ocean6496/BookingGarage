@@ -38,7 +38,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <header class="header fixed-top clearfix">
 <!--logo start-->
 <div class="brand">
-    <a href="index.html" class="logo">
+    <a href="{{ route('admin.index') }}" class="logo">
         ADMIN
     </a>
     <div class="sidebar-toggle-box">
@@ -233,7 +233,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- user login dropdown start-->
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <img alt="" src="/templates/admin/images/2.png">
+                <img alt="" src="/templates/admin/images/ocean.jpg">
                 <span class="username">Ocean</span>
                 <b class="caret"></b>
             </a>

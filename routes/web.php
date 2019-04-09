@@ -50,3 +50,5 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function() {
 
 
 Route::resource('roles', 'RoleController');
+
+Route::resource('customers', 'CustomerController');

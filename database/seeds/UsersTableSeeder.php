@@ -25,7 +25,7 @@ class UsersTableSeeder extends Seeder
                 'password' => Hash::make(123456),         
                 'email' => $faker->unique()->safeEmail,
                 'role_id' => 1,
-                'garage_id' => $faker->randomElement($role_id),
+                'garage_id' => rand(1,5),
                 'active' => 0,
             ]);
 
@@ -35,7 +35,7 @@ class UsersTableSeeder extends Seeder
                 'password' => Hash::make(12345678),         
                 'email' => $faker->unique()->safeEmail,
                 'role_id' => $faker->randomElement($role_id),
-                'garage_id' => $faker->randomElement($role_id),
+                'garage_id' => rand(1,5),
                 'active' => 0,
             ]);
         }

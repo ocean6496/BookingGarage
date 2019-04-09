@@ -47,8 +47,8 @@
             <td>{{ $garage->address }}</td>
             <td><span class="text-ellipsis">{{ $garage->phone }}</span></td>
             <td>
-              <a href="" class="active" ui-toggle-class=""><button class="btn btn-warning">edit</button></a>
-              <a href="" class="active" ui-toggle-class=""><button class="btn btn-danger">delete</button></a>
+              <a href="" class="active" ui-toggle-class=""><button class="btn btn-warning"><i class="icon-edit"></i> edit</button></a>
+              <a href="" class="active" ui-toggle-class=""><button class="btn btn-danger"><i class="icon-trash"></i> delete</button></a>
             </td>
           </tr>
           @endforeach

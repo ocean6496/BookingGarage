@@ -15,6 +15,14 @@
                         <div class="panel-body">
                             <div class="position-center">
                                 <form class="form-horizontal" role="form">
+                                    @if($user->role_id == 1)
+                                    <div class="form-group">
+                                        <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">Role:</label>
+                                        <div class="col-lg-10">
+                                            <p class="help-block">Administration</p>
+                                        </div>
+                                    </div>
+                                    @endif
                                     <div class="form-group">
                                         <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">Name:</label>
                                         <div class="col-lg-10">
@@ -27,6 +35,7 @@
                                             <p class="help-block">{{ $user->email }}</p>
                                         </div>
                                     </div>
+                                    @if($user->role_id != 1)
                                     <div class="form-group">
                                         <label for="inputPassword1" class="col-lg-2 col-sm-2 control-label">Phone</label>
                                         <div class="col-lg-10">
@@ -45,6 +54,7 @@
                                             <p class="help-block">Example block-level help text here.</p>
                                         </div>
                                     </div>
+                                    @endif
                                     <div class="form-group">
                                         <div class="col-lg-offset-2 col-lg-10">
                                             <button type="submit" class="btn btn-success">Edit Profile</button>
