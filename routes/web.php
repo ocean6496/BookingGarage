@@ -1,10 +1,5 @@
 <?php
 
-Route::get('/', function () {
-    return view('garage.index');
-});
-
-
 /*   --------- ROUTE FOR AUTHENTICATION ---------   */
 
 Route::group(['namespace' => 'Auth'], function() {
@@ -49,6 +44,14 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function() {
 });
 
 
-Route::resource('roles', 'RoleController');
+Route::get('/', function () {
+    return view('garage.index');
+});
 
-Route::resource('customers', 'CustomerController');
+Route::get('/service', function () {
+    return view('garage.service');
+});
+
+Route::get('/test', function() {
+	return view('garage.cart');
+});

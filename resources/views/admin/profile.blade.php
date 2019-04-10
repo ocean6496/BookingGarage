@@ -45,13 +45,7 @@
                                     <div class="form-group">
                                         <label for="inputPassword1" class="col-lg-2 col-sm-2 control-label">Address</label>
                                         <div class="col-lg-10">
-                                            <p class="help-block">Example block-level help text here.</p>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputPassword1" class="col-lg-2 col-sm-2 control-label">Password</label>
-                                        <div class="col-lg-10">
-                                            <p class="help-block">Example block-level help text here.</p>
+                                            <p class="help-block">{{ $user->address }}</p>
                                         </div>
                                     </div>
                                     @endif

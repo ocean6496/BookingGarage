@@ -54,7 +54,7 @@ class UserRepository extends BaseRepository
                     ->join('garages', 'users.garage_id', '=', 'garages.id')
                     ->select('users.*', 'garages.*')
                     ->where('users.id', Auth::user()->id)
-                    ->get();
+                    ->first();
         } elseif($role_id == 3) {
 
             return DB::table('users')

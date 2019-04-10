@@ -1,8 +1,3 @@
-<!--Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -73,37 +68,66 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <!-- /top bar -->
 <div class="header-top">
-			<div class="container">
-			   <nav class="navbar navbar-default">
-				<div class="navbar-header navbar-left">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<h1><a class="navbar-brand" href="index.html">CAR <span>Towing</span></a></h1>
-				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-							 <ul class="nav navbar-nav cl-effect-14">
-								<li><a class="scroll" href="index.html" class="active">Home</a></li>
-								<li><a class="scroll" href="#about">About</a></li>
-								<li><a class="scroll" href="#service">Services</a></li>
-								<li><a class="scroll" href="#team">Team</a></li>
-								<li><a class="scroll" href="#gallery">Gallery</a></li>
-								<li><a class="scroll" href="#contact">Contact</a></li>
-							  </ul>
-					</div>
-			<!-- /.navbar-collapse -->
-
-			</nav>	
-
-				
+	<div class="container">
+	    <nav class="navbar navbar-default">
+			<div class="navbar-header navbar-left">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<h1><a class="navbar-brand" href="index.html">CAR <span>Towing</span></a></h1>
 			</div>
-			
-		</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+				 <ul class="nav navbar-nav cl-effect-14">
+					<li><a class="scroll" href="index.html" class="active">Home</a></li>
+					<li><a class="scroll" href="#about">About</a></li>
+					<li class="sub-menu">
+						<a class="scroll" href="#service" id="sub-menu">Services</a>
+						<ul class="sub">
+	                        <li><a href="{{ url('/service') }}">Exhaust</a></li>
+	                        <li><a href="{{ url('/garage') }}">Batteries</a></li>
+	                    </ul>
+					</li>
+					<li><a class="scroll" href="#contact">Contact</a></li>
+				  </ul>
+			</div>
+	<!-- /.navbar-collapse -->
+
+		</nav>	
 	</div>
+</div>
+		<nav class="navbar-booking">
+			<h1><a>BOOKING TO REPAIR YOUR CAR</a></h1>
+		</nav>
+</div>
+
+<style type="text/css">
+	.sub {
+		position: absolute;
+		display: none;
+	}
+	.sub-menu:hover .sub {
+		display: block;
+		color: red;
+	}
+	.sub li {
+		background-color: #222222;
+		list-style-type: none;
+		padding: 10px;
+	}
+	.sub li a {
+		text-decoration: none;
+		color: #fff;
+	}
+	.navbar-booking {
+		background: aquamarine;
+    	text-align: center;
+    	padding: 5px;
+	}
+</style>
 	<!-- Nav tabs -->
 	<!--what-we-do-->
 			<div class="tabs" id="about">
@@ -112,52 +136,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<h3 class="head">WHY CHOOSE US?</h3>
 			     <p class="urna">Vestibulum commodo urna sit amet volutpat.</p>
 				 </div>
-					<div class="tabs-grids">
-						<div id="parentVerticalTab">
-							<ul class="resp-tabs-list hor_1">
-								<li>Car Wash</li>
-								<li>Car Repair</li>
-								<li>Car Welding</li>
-								<li>Car Delivery</li>
-								
-								
-							</ul>
-								<div class="resp-tabs-container hor_1">
-									<div class="text agile-info">
-										<h4>CAR WASH</h4>
-									    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accUKntium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-										<p>Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.</p>
-										<img src="/templates/garage/images/6.jpg" alt=" " class="img-responsive" />
-										
-									</div>
-									<div class="text agile-info">
-										<h4>CAR REPAIR</h4>
-									    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accUKntium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-										<p>Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.</p>
-										<img src="/templates/garage/images/9.jpg" alt=" " class="img-responsive" />
-										
-									</div>
-
-									<div class="text agile-info">
-										<h4>CAR WELDING</h4>
-																<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accUKntium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-										<p>Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.</p>
-										<img src="/templates/garage/images/7.jpg" alt=" " class="img-responsive" />
-										
-									</div>
-
-									
-
-									<div class="text agile-info">
-										<h4>CAR DELIVERY</h4>
-										<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accUKntium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-										<p>Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.</p>
-										<img src="/templates/garage/images/5.jpg" alt=" " class="img-responsive" />
-										
-									</div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>	
 			<!--//what-we-do-->
