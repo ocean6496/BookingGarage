@@ -19,6 +19,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- /css files -->
 <!-- js files -->
 <script src="/templates/garage/js/modernizr.custom.js"></script>
+<script src="/templates/garage/js/jquery-2.2.3.min.js"></script> 
 <link href="//fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
 <!-- /js files -->
@@ -54,8 +55,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="top-bar">
 	<div class="container">
 		<ul class="top-contacts">
-			<li class="top-unhover"><p><span class="fa fa-phone-square" aria-hidden="true"></span> +1 124 234 0079</p>
-			<li class="top-hover"><p><span class="fa fa-envelope" aria-hidden="true"></span> <a href="mailto:support@company.com">my@company.com</a></p>
+			<li class="top-unhover"><p><span class="fa fa-phone-square" aria-hidden="true"></span> +84 905 612 866</p>
+			<li class="top-hover"><p><span class="fa fa-envelope" aria-hidden="true"></span> <a href="mailto:ocean06041996@gmail.com">ocean06041996@gmail.com</a></p>
 		</ul>
 		<ul class="top-links">
 			<li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -77,12 +78,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<h1><a class="navbar-brand" href="index.html">CAR <span>Towing</span></a></h1>
+				<h1><a class="navbar-brand" href="{{ route('garage.index') }}">CAR <span>Towing</span></a></h1>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 				 <ul class="nav navbar-nav cl-effect-14">
-					<li><a class="scroll" href="index.html" class="active">Home</a></li>
+					<li><a class="scroll" href="{{ route('garage.index') }}" class="active">Home</a></li>
 					<li><a class="scroll" href="#about">About</a></li>
 					<li class="sub-menu">
 						<a class="scroll" href="#service" id="sub-menu">Services</a>
@@ -100,7 +101,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 </div>
 		<nav class="navbar-booking">
-			<h1><a>BOOKING TO REPAIR YOUR CAR</a></h1>
+			<h1><a href="{{ route('garage.getCar') }}">BOOKING TO REPAIR YOUR CAR</a></h1>
 		</nav>
 </div>
 
@@ -126,5 +127,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		background: aquamarine;
     	text-align: center;
     	padding: 5px;
+	}
+	.navbar-booking a {
+		text-decoration: none;
 	}
 </style>

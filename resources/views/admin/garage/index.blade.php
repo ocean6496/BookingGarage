@@ -10,13 +10,14 @@
     </div>
     <div class="row w3-res-tb">
       <div class="col-sm-5 m-b-xs">
-        <select class="input-sm form-control w-sm inline v-middle">
+        <!-- <select class="input-sm form-control w-sm inline v-middle">
           <option value="0">Bulk action</option>
           <option value="1">Delete selected</option>
           <option value="2">Bulk edit</option>
           <option value="3">Export</option>
         </select>
-        <button class="btn btn-sm btn-default">Apply</button>                
+        <button class="btn btn-sm btn-default">Apply</button>  -->               
+        <a href="{{ route('admin.garage.add') }}"><button class="btn btn-success"><i class="icon-plus"></i> Add</button></a>
       </div>
       <div class="col-sm-4">
       </div>
@@ -24,7 +25,7 @@
         <div class="input-group">
           <input type="text" class="input-sm form-control" placeholder="Search">
           <span class="input-group-btn">
-            <button class="btn btn-sm btn-default" type="button">Go!</button>
+            <button class="btn btn-sm btn-default" type="button">Search</button>
           </span>
         </div>
       </div>
@@ -47,7 +48,7 @@
             <td>{{ $garage->address }}</td>
             <td><span class="text-ellipsis">{{ $garage->phone }}</span></td>
             <td>
-              <a href="" class="active" ui-toggle-class=""><button class="btn btn-warning"><i class="icon-edit"></i> edit</button></a>
+              <a href="{{ route('admin.garage.edit') }}" class="active" ui-toggle-class=""><button class="btn btn-warning"><i class="icon-edit"></i> edit</button></a>
               <a href="" class="active" ui-toggle-class=""><button class="btn btn-danger"><i class="icon-trash"></i> delete</button></a>
             </td>
           </tr>

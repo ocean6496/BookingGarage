@@ -17,6 +17,21 @@ class GarageController extends Controller
     {
     	$garages = $this->garageRepository->all();
 
-    	return view('admin.garage', compact('garages'));
+    	return view('admin.garage.index', compact('garages'));
+    }
+
+    public function getAdd()
+    {
+    	return view('admin.garage.add');
+    }
+
+    public function postAdd()
+    {
+
+    }
+
+    public function getEdit()
+    {
+    	return view('admin.garage.edit');
     }
 }

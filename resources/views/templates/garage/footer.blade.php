@@ -43,7 +43,7 @@
 <!-- //footer -->
 <!-- js files -->
 <!-- swipe box js -->
-<script src="/templates/garage/js/jquery-2.2.3.min.js"></script> 
+<!-- <script src="/templates/garage/js/jquery-2.2.3.min.js"></script>  -->
 <script src="/templates/garage/js/jquery.pogo-slider.min.js"></script>
 <script src="/templates/garage/js/main.js"></script>
 <!-- /js files -->
