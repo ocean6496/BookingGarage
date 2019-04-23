@@ -4,14 +4,14 @@
 	<div class="newsletter" id="contact">
 		<div class="container">
 			<div class="col-md-6 w3agile_newsletter_left">
-				<h2>Your car: <span class="car-detail">{{ $car->name }} -  {{ $car_model->name }}</span></h2>
-				<h2>Service detail:</h2>
+				<h2><span style="color: darkgray">Your car:</span><span class="car-detail">{{ $car->name }} -  {{ $car_model->name }}</span></h2>
+				<h2><span style="color: darkgray">Service detail:</span></h2>
 				@foreach($services as $service)
 					<h4>{{ $service->name }}:</h4>
 					<p> {{ $service->description }}</p>	
 				@endforeach
-				<h2>Garage: <span class="car-detail">{{ $garage->address }}</span></h2>
-				<h2>Time: <span class="car-detail">{{$time}} - {{ $date }}</span></h2>
+				<h2><span style="color: darkgray">Garage: </span><span class="detail">{{ $garage->address }}</span></h2>
+				<h2><span style="color: darkgray">Time: </span><span class="detail">{{$time}} - {{ $date }}</span></h2>
 			</div>
 			<div class="col-md-6 w3agile_newsletter_right">
 				<form action="{{ route('garage.booking', ['car_id' => $car->id, 'car_model_id' => $car_model->id]) }}" method="GET">
@@ -64,6 +64,10 @@
 	.car-detail {
 		color: brown;
 		padding-bottom: 15px;
+	}
+	.detail {
+		font-size: 20px;
+   		color: darkorange;
 	}
 </style>
 @endsection

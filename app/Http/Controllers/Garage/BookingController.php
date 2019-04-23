@@ -74,7 +74,7 @@ class BookingController extends Controller
 
         $service_id = $request->session()->get('service');
         $services = Service::whereIn('id', $service_id)->get();
-// dd($services);
+
     	return view('garage.user', compact('garage', 'date', 'time', 'car', 'car_model', 'services'));
     }
 
@@ -97,16 +97,21 @@ class BookingController extends Controller
             ]);
 
             $user_id = User::where('email', $email)->first()->id;
-            Booking::insert([
-                'user_id' => $user_id,
-                'car_id' => $car_id,
-                'car_model_id' => $car_model_id,
-                'garage_id' => $request->session()->get('garage'),
-                'date' => $request->session()->get('dateTime')[0],
-                'time' => $request->session()->get('dateTime')[1],
-                'service_id' => 1,
-                'checkout' => 0
-            ]);
+
+            $arrayServiceId = $request->session()->get('service');
+
+            foreach ($arrayServiceId as $value) {
+                Booking::insert([
+                    'user_id' => $user_id,
+                    'car_id' => $car_id,
+                    'car_model_id' => $car_model_id,
+                    'garage_id' => $request->session()->get('garage'),
+                    'date' => $request->session()->get('dateTime')[0],
+                    'time' => $request->session()->get('dateTime')[1],
+                    'service_id' => $value,
+                    'checkout' => 0
+                ]);
+            }
         } else { 
             // return redirect()->route('garage.getUser', ['car_id' => $car_id, 'car_model_id' => $car_model_id])->with('msg', 'User was has in system');
         }

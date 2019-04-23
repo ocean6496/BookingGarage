@@ -72,17 +72,17 @@ Route::group(['namespace' => 'Garage'], function() {
 		'uses' => 'BookingController@getCarModel',
 	]);
 
-	Route::get('/service', [
+	Route::post('/service', [
 		'uses' => 'BookingController@getService',
 		'as' => 'garage.service'
 	]);
 
-	Route::get('/choise-garage/{car_id}-{car_model_id}', [
+	Route::post('/choise-garage/{car_id}-{car_model_id}', [
 		'uses' => 'BookingController@choiseGarage',
 		'as' => 'garage.choiseGarage'
 	]);
 
-	Route::get('/account/{car_id}-{car_model_id}', [
+	Route::post('/account/{car_id}-{car_model_id}', [
 		'uses' => 'BookingController@getUser',
 		'as' => 'garage.getUser'
 	]);

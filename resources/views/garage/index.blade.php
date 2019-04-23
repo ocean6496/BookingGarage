@@ -58,7 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<li class="top-hover"><p><span class="fa fa-envelope" aria-hidden="true"></span> <a href="mailto:ocean06041996@gmail.com">ocean06041996@gmail.com</a></p>
 		</ul>
 		<ul class="top-links">
-			<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+			<li><a href="https://www.facebook.com/ocean6496" target="_blank"><i class="fa fa-facebook"></i></a></li>
 			<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 			<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
 			<li><a href="#"><i class="fa fa-google-plus"></i></a></li>

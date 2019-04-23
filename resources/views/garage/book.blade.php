@@ -2,7 +2,7 @@
 @section('content')
 <div class="team" id ="team">
 	<div class="container">
-		<form action="{{ route('garage.service') }}" method="GET">
+		<form action="{{ route('garage.service') }}" method="POST">
 			{{ csrf_field() }}
 			<h3 class="head">CHOOSE YOUR CAR</h3>
 			<p class="urna">You choose car and model to book our service.</p>
