@@ -1,8 +1,3 @@
-<!--Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -59,11 +54,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="top-bar">
 	<div class="container">
 		<ul class="top-contacts">
-			<li class="top-unhover"><p><span class="fa fa-phone-square" aria-hidden="true"></span> +1 124 234 0079</p>
-			<li class="top-hover"><p><span class="fa fa-envelope" aria-hidden="true"></span> <a href="mailto:support@company.com">my@company.com</a></p>
+			<li class="top-unhover"><p><span class="fa fa-phone-square" aria-hidden="true"></span> +84 905 612 866</p>
+			<li class="top-hover"><p><span class="fa fa-envelope" aria-hidden="true"></span> <a href="mailto:ocean06041996@gmail.com">ocean06041996@gmail.com</a></p>
 		</ul>
 		<ul class="top-links">
-			<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+			<li><a href="https://www.facebook.com/ocean6496" target="_blank"><i class="fa fa-facebook"></i></a></li>
 			<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 			<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
 			<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
@@ -73,37 +68,69 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <!-- /top bar -->
 <div class="header-top">
-			<div class="container">
-			   <nav class="navbar navbar-default">
-				<div class="navbar-header navbar-left">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<h1><a class="navbar-brand" href="index.html">CAR <span>Towing</span></a></h1>
-				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-							 <ul class="nav navbar-nav cl-effect-14">
-								<li><a class="scroll" href="index.html" class="active">Home</a></li>
-								<li><a class="scroll" href="#about">About</a></li>
-								<li><a class="scroll" href="#service">Services</a></li>
-								<li><a class="scroll" href="#team">Team</a></li>
-								<li><a class="scroll" href="#gallery">Gallery</a></li>
-								<li><a class="scroll" href="#contact">Contact</a></li>
-							  </ul>
-					</div>
-			<!-- /.navbar-collapse -->
-
-			</nav>	
-
-				
+	<div class="container">
+	    <nav class="navbar navbar-default">
+			<div class="navbar-header navbar-left">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<h1><a class="navbar-brand" href="{{ route('garage.index') }}">CAR <span>Towing</span></a></h1>
 			</div>
-			
-		</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+				 <ul class="nav navbar-nav cl-effect-14">
+					<li><a class="scroll" href="{{ route('garage.index') }}" class="active">Home</a></li>
+					<li><a class="scroll" href="#about">About</a></li>
+					<li class="sub-menu">
+						<a class="scroll" href="#service" id="sub-menu">Services</a>
+						<ul class="sub">
+	                        <li><a href="{{ url('/service') }}">Exhaust</a></li>
+	                        <li><a href="{{ url('/garage') }}">Batteries</a></li>
+	                    </ul>
+					</li>
+					<li><a class="scroll" href="#contact">Contact</a></li>
+				  </ul>
+			</div>
+	<!-- /.navbar-collapse -->
+
+		</nav>	
 	</div>
+</div>
+		<nav class="navbar-booking">
+			<h1><a href="{{ route('garage.getCar') }}">BOOKING TO REPAIR YOUR CAR</a></h1>
+		</nav>
+</div>
+
+<style type="text/css">
+	.sub {
+		position: absolute;
+		display: none;
+	}
+	.sub-menu:hover .sub {
+		display: block;
+		color: red;
+	}
+	.sub li {
+		background-color: #222222;
+		list-style-type: none;
+		padding: 10px;
+	}
+	.sub li a {
+		text-decoration: none;
+		color: #fff;
+	}
+	.navbar-booking {
+		background: aquamarine;
+    	text-align: center;
+    	padding: 5px;
+	}
+	.navbar-booking a {
+		text-decoration: none;
+	}
+</style>
 	<!-- Nav tabs -->
 	<!--what-we-do-->
 			<div class="tabs" id="about">
@@ -112,52 +139,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<h3 class="head">WHY CHOOSE US?</h3>
 			     <p class="urna">Vestibulum commodo urna sit amet volutpat.</p>
 				 </div>
-					<div class="tabs-grids">
-						<div id="parentVerticalTab">
-							<ul class="resp-tabs-list hor_1">
-								<li>Car Wash</li>
-								<li>Car Repair</li>
-								<li>Car Welding</li>
-								<li>Car Delivery</li>
-								
-								
-							</ul>
-								<div class="resp-tabs-container hor_1">
-									<div class="text agile-info">
-										<h4>CAR WASH</h4>
-									    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accUKntium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-										<p>Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.</p>
-										<img src="/templates/garage/images/6.jpg" alt=" " class="img-responsive" />
-										
-									</div>
-									<div class="text agile-info">
-										<h4>CAR REPAIR</h4>
-									    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accUKntium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-										<p>Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.</p>
-										<img src="/templates/garage/images/9.jpg" alt=" " class="img-responsive" />
-										
-									</div>
-
-									<div class="text agile-info">
-										<h4>CAR WELDING</h4>
-																<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accUKntium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-										<p>Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.</p>
-										<img src="/templates/garage/images/7.jpg" alt=" " class="img-responsive" />
-										
-									</div>
-
-									
-
-									<div class="text agile-info">
-										<h4>CAR DELIVERY</h4>
-										<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accUKntium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-										<p>Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.</p>
-										<img src="/templates/garage/images/5.jpg" alt=" " class="img-responsive" />
-										
-									</div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>	
 			<!--//what-we-do-->
@@ -358,7 +339,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		
 				<div class="gallery-grids">
 					<div class="col-md-4 baner-top">
-						<a href="images/1.jpg" class="b-link-stripe b-animate-go  swipebox">
+						<a href="/templates/garage/images/1.jpg" class="b-link-stripe b-animate-go  swipebox">
 							<div class="gal-spin-effect vertical ">
 								<img src="/templates/garage/images/1.jpg" alt=" " />
 								<div class="gal-text-box">
@@ -376,7 +357,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-4 baner-top">
 						<a href="/templates/garage/images/2.jpg" class="b-link-stripe b-animate-go  swipebox">
 							<div class="gal-spin-effect vertical ">
-								<img src="images/2.jpg" alt=" " />
+								<img src="/templates/garage/images/2.jpg" alt=" " />
 								<div class="gal-text-box">
 									<div class="info-gal-con">
 										<h4>Car Towing</h4>
@@ -392,7 +373,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-4 baner-top ban-mar">
 						<a href="/templates/garage/images/3.jpg" class="b-link-stripe b-animate-go  swipebox">
 							<div class="gal-spin-effect vertical ">
-								<img src="images/3.jpg" alt=" " />
+								<img src="/templates/garage/images/3.jpg" alt=" " />
 								<div class="gal-text-box">
 									<div class="info-gal-con">
 										<h4>Car Towing</h4>
@@ -408,7 +389,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-4 baner-top ban-mar">
 						<a href="/templates/garage/images/4.jpg" class="b-link-stripe b-animate-go  swipebox">
 							<div class="gal-spin-effect vertical ">
-								<img src="images/4.jpg" alt=" " />
+								<img src="/templates/garage/images/4.jpg" alt=" " />
 								<div class="gal-text-box">
 									<div class="info-gal-con">
 										<h4>Car Towing</h4>
@@ -424,7 +405,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-4 baner-top ban-mar">
 						<a href="/templates/garage/images/5.jpg" class="b-link-stripe b-animate-go  swipebox">
 							<div class="gal-spin-effect vertical ">
-								<img src="images/5.jpg" alt=" " />
+								<img src="/templates/garage/images/5.jpg" alt=" " />
 								<div class="gal-text-box">
 									<div class="info-gal-con">
 										<h4>Car Towing</h4>
@@ -440,7 +421,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-4 baner-top ban-mar">
 						<a href="/templates/garage/images/6.jpg" class="b-link-stripe b-animate-go  swipebox">
 							<div class="gal-spin-effect vertical ">
-								<img src="images/6.jpg" alt=" " />
+								<img src="/templates/garage/images/6.jpg" alt=" " />
 								<div class="gal-text-box">
 									<div class="info-gal-con">
 										<h4>Car Towing</h4>
@@ -456,7 +437,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-4 baner-top">
 						<a href="/templates/garage/images/7.jpg" class="b-link-stripe b-animate-go  swipebox">
 							<div class="gal-spin-effect vertical ">
-								<img src="images/7.jpg" alt=" " />
+								<img src="/templates/garage/images/7.jpg" alt=" " />
 								<div class="gal-text-box">
 									<div class="info-gal-con">
 										<h4>Car Towing</h4>
@@ -472,7 +453,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-4 baner-top">
 						<a href="/templates/garage/images/8.jpg" class="b-link-stripe b-animate-go  swipebox">
 							<div class="gal-spin-effect vertical ">
-								<img src="images/8.jpg" alt=" " />
+								<img src="/templates/garage/images/8.jpg" alt=" " />
 								<div class="gal-text-box">
 									<div class="info-gal-con">
 										<h4>Car Towing</h4>
@@ -488,7 +469,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="col-md-4 baner-top">
 						<a href="/templates/garage/images/9.jpg" class="b-link-stripe b-animate-go  swipebox">
 							<div class="gal-spin-effect vertical ">
-								<img src="images/9.jpg" alt=" " />
+								<img src="/templates/garage/images/9.jpg" alt=" " />
 								<div class="gal-text-box">
 									<div class="info-gal-con">
 										<h4>Car Towing</h4>
@@ -542,11 +523,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //newsletter -->
 <!-- map -->
 		<div class="map agileits">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26359195.17562375!2d-113.7156245614499!3d36.2473834534249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited+States!5e0!3m2!1sen!2sin!4v1471497559566"  frameborder="0" style="border:0" allowfullscreen></iframe>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d3833.883971589609!2d108.14993639993541!3d16.07150969359228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d16.070566!2d108.1543995!4m5!1s0x314218d68e8ccb03%3A0x64dc2cb3e38bbdaf!2zNTQgTmd1eeG7hW4gTMawxqFuZyBC4bqxbmcsIEhvw6AgS2jDoW5oIELhuq9jLCBMacOqbiBDaGnhu4N1LCDEkMOgIE7hurVuZyA1NTAwMDA!3m2!1d16.0738013!2d108.1499142!5e0!3m2!1svi!2s!4v1554518809914!5m2!1svi!2s" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 				<div class="map-grids">
 					<div class="map-grid-left">
 						<ul>
-								<li class="dot"><i class="fa fa-location-arrow" aria-hidden="true"></i> BD 2 Mars, N1 136, Morocco Casablanca</li>
+								<li class="dot"><i class="fa fa-location-arrow" aria-hidden="true"></i>54 Nguyen Luong Bang, Da Nang</li>
 								<li class="mobile"><i class="fa fa-volume-control-phone" aria-hidden="true"></i> +212 522 275 386</li>
 								<li class="mes"><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">Example @mail.com</a></li>
 						</ul>
@@ -580,9 +561,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-4 agileinfo_footer_grid">
 					<h3>Contact Info</h3>
 					<ul class="agileinfo_footer_grid_list">
-						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block, <span>New York City.</span></li>
-						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@example.com</a></li>
-						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>
+						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>606/03 Truong Chinh, Cam Le <span>Da Nang City.</span></li>
+						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">ocean06041996@gmail.com</a></li>
+						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+0905 612 866</li>
 					</ul>
 				</div>
 				<div class="col-md-4 agileinfo_footer_grid">
@@ -601,7 +582,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 		<div class="w3agile_footer_copy">
-				<p>&copy; 2016 Car Towing. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+				<p>&copy; 2016 Car Towing. All rights reserved | Design by <a href="http://w3layouts.com/">Ocean</a></p>
 			</div>
 		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 <!-- //footer -->

@@ -238,6 +238,7 @@ ul.sidebar-menu li a.active i {
     padding:15px;
     width:100%;
     background-color: #fff;
+    min-height: 550px;
 }
 .brand {
     background:#8b5c7e;
@@ -1450,7 +1451,7 @@ section#tables  p {
 	background-color: #ffffff;
 }
 .table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
-	padding: 15px!important;
+	padding: 10px!important;
 }
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
 	font-size: 0.9em;
@@ -1633,7 +1634,7 @@ ul.bs-glyphicons-list {
 }
 .table-agile-info{
 	background: #eef9f0;
-    padding: 2em;
+    padding: 1em;
     border-radius: 4px;
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
     box-shadow: 0 1px 1px rgba(0,0,0,.05);
@@ -2526,7 +2527,7 @@ canvas.canvasjs-chart-canvas {
     margin-bottom: 2em;
 }
 .w3-res-tb {
-    padding: 2em 1em 0;
+    padding: 1em 1em 0;
 }
 .pagination {
     margin: 0 !important;

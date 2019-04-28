@@ -38,7 +38,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <header class="header fixed-top clearfix">
 <!--logo start-->
 <div class="brand">
-    <a href="index.html" class="logo">
+    <a href="{{ route('admin.index') }}" class="logo">
         ADMIN
     </a>
     <div class="sidebar-toggle-box">
@@ -120,17 +120,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- settings end -->
         <!-- inbox dropdown start-->
         <li id="header_inbox_bar" class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+            <!-- <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <i class="fa fa-envelope-o"></i>
                 <span class="badge bg-important">4</span>
-            </a>
+            </a> -->
             <ul class="dropdown-menu extended inbox">
                 <li>
                     <p class="red">You have 4 Mails</p>
                 </li>
                 <li>
                     <a href="#">
-                        <span class="photo"><img alt="avatar" src="images/3.png"></span>
+                        <span class="photo"><img alt="avatar" src="/templates/admin/images/3.png"></span>
                                 <span class="subject">
                                 <span class="from">Jonathan Smith</span>
                                 <span class="time">Just now</span>
@@ -142,7 +142,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </li>
                 <li>
                     <a href="#">
-                        <span class="photo"><img alt="avatar" src="images/1.png"></span>
+                        <span class="photo"><img alt="avatar" src="/templates/admin/images/1.png"></span>
                                 <span class="subject">
                                 <span class="from">Jane Doe</span>
                                 <span class="time">2 min ago</span>
@@ -154,7 +154,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </li>
                 <li>
                     <a href="#">
-                        <span class="photo"><img alt="avatar" src="images/3.png"></span>
+                        <span class="photo"><img alt="avatar" src="/templates/admin/images/3.png"></span>
                                 <span class="subject">
                                 <span class="from">Tasi sam</span>
                                 <span class="time">2 days ago</span>
@@ -166,7 +166,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </li>
                 <li>
                     <a href="#">
-                        <span class="photo"><img alt="avatar" src="images/2.png"></span>
+                        <span class="photo"><img alt="avatar" src="/templates/admin/images/2.png"></span>
                                 <span class="subject">
                                 <span class="from">Mr. Perfect</span>
                                 <span class="time">2 hour ago</span>
@@ -187,7 +187,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
 
                 <i class="fa fa-bell-o"></i>
-                <span class="badge bg-warning">3</span>
+                <span class="badge bg-important">3</span>
             </a>
             <ul class="dropdown-menu extended notification">
                 <li>
@@ -233,14 +233,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- user login dropdown start-->
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <img alt="" src="images/2.png">
+                <img alt="" src="/templates/admin/images/ocean.jpg">
                 <span class="username">Ocean</span>
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu extended logout">
-                <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                <li><a href="{{ route('admin.profile') }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
                 <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                <li><a href="{{ route('logout') }}"><i class="fa fa-key"></i> Log Out</a></li>
             </ul>
         </li>
         <!-- user login dropdown end -->
