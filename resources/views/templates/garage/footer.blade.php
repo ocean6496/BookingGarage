@@ -16,9 +16,9 @@
 				<div class="col-md-4 agileinfo_footer_grid">
 					<h3>Contact Info</h3>
 					<ul class="agileinfo_footer_grid_list">
-						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block, <span>New York City.</span></li>
-						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@example.com</a></li>
-						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>
+						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>606/03 Truong Chinh, Cam Le <span>Da Nang City.</span></li>
+						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">ocean06041996@gmail.com</a></li>
+						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+0905 612 866</li>
 					</ul>
 				</div>
 				<div class="col-md-4 agileinfo_footer_grid">

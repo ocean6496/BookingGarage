@@ -120,10 +120,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- settings end -->
         <!-- inbox dropdown start-->
         <li id="header_inbox_bar" class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+            <!-- <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <i class="fa fa-envelope-o"></i>
                 <span class="badge bg-important">4</span>
-            </a>
+            </a> -->
             <ul class="dropdown-menu extended inbox">
                 <li>
                     <p class="red">You have 4 Mails</p>
@@ -187,7 +187,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
 
                 <i class="fa fa-bell-o"></i>
-                <span class="badge bg-warning">3</span>
+                <span class="badge bg-important">3</span>
             </a>
             <ul class="dropdown-menu extended notification">
                 <li>

@@ -18,13 +18,13 @@
 			<tr>
 				<td>{{ $service->name }}</td>
 				<td>{{ $service->description }}</td>
-				<td>{{ $service->price }}</td>
-				<td><input class="checkbox" type="checkbox" name="{{ $service->id }}" value="{{ $service->price }}"></td>
+				<td>$ {{ $service->price }}</td>
+				<td><input class="checkbox" type="checkbox" name="{{ $service->id }}" value="{{ $service->price }}" onchange="toggleCheckbox(this)"></td>
 			</tr>
 			@endforeach
 			<tr>
 				<th colspan="2">Total</th>
-				<th></th>
+				<th id="total">$ 0</th>
 				<th></th>
 			</tr>
 		</table><br>
@@ -33,10 +33,22 @@
 	</div>
 </div>
 <script type="text/javascript">
-	$(document).ready(function() {
-		var check = $('.checkbox:checked').val();
-		console.log(check);
-	});
+	var temp = 0;
+	function toggleCheckbox(element) {
+		if (element.checked == true) {
+			var a = element.value;
+			var b = parseInt(a)
+			temp += b;
+			console.log(temp)
+			document.getElementById('total').innerHTML = '$ ' + temp
+		} else {
+			var a = element.value;
+			var b = parseInt(a)
+			temp -= b;
+			console.log(temp)
+			document.getElementById('total').innerHTML = '$ ' + temp
+		}
+	}
 </script>
 <style type="text/css">
 	.table tr th {

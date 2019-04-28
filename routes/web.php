@@ -51,6 +51,67 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 		'as' => 'admin.garage.edit'
 	]);
 
+	/*     ===== Route for service =====     */
+
+	Route::get('/service', [
+		'uses' => 'ServiceController@getService',
+		'as' => 'admin.service'
+	]);
+
+	Route::get('/service/add', [
+		'uses' => 'ServiceController@getAdd',
+		'as' => 'admin.service.add'
+	]);
+
+	Route::post('/service/add', [
+		'uses' => 'ServiceController@postAdd',
+		'as' => 'admin.service.add'
+	]);
+
+	Route::get('/service/edit/{id}', [
+		'uses' => 'ServiceController@getEdit',
+		'as' => 'admin.service.edit'
+	]);
+
+	Route::post('/service/edit/{id}', [
+		'uses' => 'ServiceController@postEdit',
+		'as' => 'admin.service.edit'
+	]);
+
+	Route::get('/service/delete/{id}', [
+		'uses' => 'ServiceController@delete',
+		'as' => 'admin.service.delete'
+	]);
+
+	/*     ===== Route for contact =====     */
+
+	Route::get('/contact', [
+		'uses' => 'ContactController@getContact',
+		'as' => 'admin.contact'
+	]);
+
+	Route::get('/contact/add', [
+		'uses' => 'ContactController@getAdd',
+		'as' => 'admin.contact.add'
+	]);
+
+	Route::post('/contact/add', [
+		'uses' => 'ContactController@postAdd',
+		'as' => 'admin.contact.add'
+	]);
+
+	Route::get('/contact/delete/{id}', [
+		'uses' => 'ContactController@delete',
+		'as' => 'admin.contact.delete'
+	]);
+
+	/*     ===== Route for booking =====     */
+
+	Route::get('/booking', [
+		'uses' => 'BookingController@getBooking',
+		'as' => 'admin.booking'
+	]);
+
 });
 
 
@@ -96,5 +157,5 @@ Route::group(['namespace' => 'Garage'], function() {
 
 
 Route::get('/test', function() {
-	return view('garage.cart');
+	return view('admin.customer');
 });

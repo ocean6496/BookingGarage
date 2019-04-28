@@ -19,11 +19,29 @@
                 </li>
                 <li class="sub-menu">
                     <a href="javascript:;">
-                        <i class=" fa fa-bar-chart-o"></i>
+                        <i class=" fa fa-street-view"></i>
                         <span>Customer</span>
                     </a>
                 </li>
                 <li class="sub-menu">
+                    <a href="{{ route('admin.booking') }}">
+                        <i class=" fa fa-first-order"></i>
+                        <span>Booking</span>
+                    </a>
+                </li>
+                <li class="sub-menu">
+                    <a href="{{ route('admin.service') }}">
+                        <i class=" fa fa-bar-chart-o"></i>
+                        <span>Service</span>
+                    </a>
+                </li>
+                <li class="sub-menu">
+                    <a href="{{ route('admin.contact') }}">
+                        <i class=" fa fa-phone-square"></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
+                <!-- <li class="sub-menu">
                     <a href="javascript:;">
                         <i class=" fa fa-bar-chart-o"></i>
                         <span>Maps</span>
@@ -32,7 +50,7 @@
                         <li><a href="google_map.html">Google Map</a></li>
                         <li><a href="vector_map.html">Vector Map</a></li>
                     </ul>
-                </li>
+                </li> -->
             </ul>            
         </div>
         <!-- sidebar menu end-->
