@@ -19,8 +19,15 @@ class AuthController extends Controller
     	$password = $request->password;
 
     	if (Auth::attempt(['username' => $username, 'password' => $password])) {
-    		
-		    return redirect()->route('admin.index');
+    		$role_id = Auth::user()->role_id;
+            if ($role_id == 1) {               
+		       return redirect()->route('admin.index');
+            } elseif ($role_id == 2) {
+                return redirect()->route('customer.index');
+            } elseif ($role_id == 3) {
+                dd(3);
+            }
+
 		} else {
 			return redirect()->route('login')->with('msg', 'Username or Password not correct!');
 		}

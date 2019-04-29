@@ -38,9 +38,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <header class="header fixed-top clearfix">
 <!--logo start-->
 <div class="brand">
+    @if (Auth::user()->role_id == 1)
     <a href="{{ route('admin.index') }}" class="logo">
         ADMIN
     </a>
+    @elseif (Auth::user()->role_id == 2)
+    <a href="{{ route('customer.index') }}" class="logo">
+        CUSTOMER
+    </a>
+    @endif
     <div class="sidebar-toggle-box">
         <div class="fa fa-bars"></div>
     </div>
@@ -239,8 +245,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </a>
             <ul class="dropdown-menu extended logout">
                 <li><a href="{{ route('admin.profile') }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                <li><a href="{{ route('logout') }}"><i class="fa fa-key"></i> Log Out</a></li>
+                <li><a href="{{ route('admin.changePassword') }}"><i class="fa fa-key"></i> Change Password</a></li>
+                <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> Log Out</a></li>
             </ul>
         </li>
         <!-- user login dropdown end -->

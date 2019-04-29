@@ -4,43 +4,68 @@
         <!-- sidebar menu start-->
         <div class="leftside-navigation">
             <ul class="sidebar-menu" id="nav-accordion">
-                <li>
-                    <a class="active" href="{{ route('admin.index') }}">
-                        <i class="fa fa-dashboard"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
+                @if (Auth::user()->role_id == 1)
+                    <li>
+                        <a class="active" href="{{ route('admin.index') }}">
+                            <i class="fa fa-dashboard"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                @endif
                 
+                @if (Auth::user()->role_id == 1)
                 <li class="sub-menu">
                     <a href="{{ route('admin.garage') }}">
                         <i class="fa fa-book"></i>
                         <span>Garage</span>
                     </a>
                 </li>
+                @endif
+
+                @if (Auth::user()->role_id == 1)
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class=" fa fa-street-view"></i>
                         <span>Customer</span>
                     </a>
                 </li>
+                @endif
+
+                @if (Auth::user()->role_id == 1)
                 <li class="sub-menu">
                     <a href="{{ route('admin.booking') }}">
                         <i class=" fa fa-first-order"></i>
                         <span>Booking</span>
                     </a>
                 </li>
+                @endif
+
+                @if (Auth::user()->role_id == 1)
                 <li class="sub-menu">
                     <a href="{{ route('admin.service') }}">
                         <i class=" fa fa-bar-chart-o"></i>
                         <span>Service</span>
                     </a>
                 </li>
+                @endif
+
+                @if (Auth::user()->role_id == 1)
                 <li class="sub-menu">
                     <a href="{{ route('admin.contact') }}">
                         <i class=" fa fa-phone-square"></i>
                         <span>Contact</span>
                     </a>
                 </li>
+                @endif
+
+                @if (Auth::user()->role_id == 2)
+                    <li class="sub-menu">
+                        <a href="{{ route('admin.service') }}">
+                            <i class=" fa fa-first-order"></i>
+                            <span>Booking</span>
+                        </a>
+                    </li>
+                @endif
                 <!-- <li class="sub-menu">
                     <a href="javascript:;">
                         <i class=" fa fa-bar-chart-o"></i>

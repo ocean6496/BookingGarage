@@ -17,6 +17,8 @@ class CreateGaragesTable extends Migration
 	{
 		Schema::create('garages', function(Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->integer('user_id');
             $table->string('address');
             $table->string('phone');
             $table->string('proprietor');

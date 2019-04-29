@@ -36,6 +36,11 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 		'as' => 'admin.profile'
 	]);
 
+	Route::get('/change-password', [
+		'uses' => 'IndexController@changePassword',
+		'as' => 'admin.changePassword'
+	]);
+
 	Route::get('/garage', [
 		'uses' => 'GarageController@index',
 		'as' => 'admin.garage'
@@ -114,6 +119,15 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 
 });
 
+/*   --------- ROUTE FOR CUSTOMER ---------   */
+
+Route::group(['namespace' => 'Customer', 'prefix' => 'customer', 'middleware' => 'auth'], function() {
+	Route::get('/', [
+		'uses' => 'IndexController@index',
+		'as' => 'customer.index'
+	]);
+});
+
 
 /*   --------- ROUTE FOR PUBLIC GARAGE ---------   */
 
@@ -157,5 +171,5 @@ Route::group(['namespace' => 'Garage'], function() {
 
 
 Route::get('/test', function() {
-	return view('admin.customer');
+	return view('garage.payment');
 });

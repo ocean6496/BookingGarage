@@ -27,4 +27,9 @@ class IndexController extends Controller
 
     	return view('admin.profile', compact('user'));
     }
+
+    public function changePassword()
+    {
+        return view('admin.changePass');
+    }
 }

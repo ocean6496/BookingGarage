@@ -23,9 +23,11 @@ class GaragesTableSeeder extends Seeder
 
         foreach ($garages as $garage) {
         	Garage::create([
-        		'address' => $faker->address,
+        		'name' => $faker->name,
+                'address' => $faker->address,
         		'phone' => $faker->phoneNumber,
         		'proprietor' => $faker->name,
+                'user_id' => $garage->id
         	]);
         }
     }
