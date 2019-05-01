@@ -20,7 +20,6 @@ class CreateCustomersTable extends Migration
             $table->string('phone');
             $table->integer('user_id');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

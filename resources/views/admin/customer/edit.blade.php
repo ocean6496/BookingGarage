@@ -9,33 +9,27 @@
 	        <div class="col-lg-12">
 		        <section class="panel">
 		            <header class="panel-heading">
-		                Edit Garage
+		                Edit customer
 		            </header>
 		           <div class="panel-body">
-		                <form class="form-horizontal bucket-form" method="post" action="{{ route('admin.garage.edit', ['id' => $garage->id]) }}">
+		                <form class="form-horizontal bucket-form" method="post" action="{{ route('admin.customer.edit', ['id' => $customer->id]) }}">
 		                	{{ csrf_field() }}
 		                    <div class="form-group">
-		                        <label class="col-sm-3 control-label">Name</label>
+		                        <label class="col-sm-3 control-label">Full Name</label>
 		                        <div class="col-sm-6">
-		                            <input class="form-control" type="text" name="name" value="{{ $garage->name }}">
+		                            <input class="form-control" type="text" name="fullname" value="{{ $customer->fullname }}">
 		                        </div>
 		                    </div>
 		                    <div class="form-group">
 		                        <label class="col-sm-3 control-label">Address</label>
 		                        <div class="col-sm-6">
-		                            <input type="text" class="form-control round-input" name="address" value="{{ $garage->address }}">
+		                            <input type="text" class="form-control round-input" name="address" value="{{ $customer->address }}">
 		                        </div>
 		                    </div>
 		                    <div class="form-group">
 		                        <label class="col-sm-3 control-label">Phone</label>
 		                        <div class="col-sm-6">
-		                            <input type="text" class="form-control round-input" name="phone" value="{{ $garage->phone }}">
-		                        </div>
-		                    </div>
-		                    <div class="form-group">
-		                        <label class="col-sm-3 control-label">Proprietor</label>
-		                        <div class="col-sm-6">
-		                            <input type="text" class="form-control round-input" name="proprietor" value="{{ $garage->proprietor }}">
+		                            <input type="text" class="form-control round-input" name="phone" value="{{ $customer->phone }}">
 		                        </div>
 		                    </div>
 		                    <div class="form-group">

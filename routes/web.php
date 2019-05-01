@@ -41,6 +41,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 		'as' => 'admin.changePassword'
 	]);
 
+	/*     ===== Route for garage =====     */
+
 	Route::get('/garage', [
 		'uses' => 'GarageController@index',
 		'as' => 'admin.garage'
@@ -51,9 +53,56 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 		'as' => 'admin.garage.add'
 	]);
 
-	Route::get('/garage/edit', [
+	Route::post('/garage/add', [
+		'uses' => 'GarageController@postAdd',
+		'as' => 'admin.garage.add'
+	]);
+
+	Route::get('/garage/edit/{id}', [
 		'uses' => 'GarageController@getEdit',
 		'as' => 'admin.garage.edit'
+	]);
+
+	Route::post('/garage/edit/{id}', [
+		'uses' => 'GarageController@postEdit',
+		'as' => 'admin.garage.edit'
+	]);
+
+	Route::get('/garage/delete/{id}', [
+		'uses' => 'GarageController@delete',
+		'as' => 'admin.garage.delete'
+	]);
+
+	/*     ===== Route for customer =====     */
+
+	Route::get('/customer', [
+		'uses' => 'CustomerController@index',
+		'as' => 'admin.customer'
+	]);
+
+	Route::get('/customer/add', [
+		'uses' => 'CustomerController@getAdd',
+		'as' => 'admin.customer.add'
+	]);
+
+	Route::post('/customer/add', [
+		'uses' => 'CustomerController@postAdd',
+		'as' => 'admin.customer.add'
+	]);
+
+	Route::get('/customer/edit/{id}', [
+		'uses' => 'CustomerController@getEdit',
+		'as' => 'admin.customer.edit'
+	]);
+
+	Route::post('/customer/edit/{id}', [
+		'uses' => 'CustomerController@postEdit',
+		'as' => 'admin.customer.edit'
+	]);
+
+	Route::get('/customer/delete/{id}', [
+		'uses' => 'CustomerController@delete',
+		'as' => 'admin.customer.delete'
 	]);
 
 	/*     ===== Route for service =====     */
@@ -126,6 +175,16 @@ Route::group(['namespace' => 'Customer', 'prefix' => 'customer', 'middleware' =>
 		'uses' => 'IndexController@index',
 		'as' => 'customer.index'
 	]);
+
+	Route::get('/feedback', [
+		'uses' => 'IndexController@getFeedback',
+		'as' => 'customer.feedback'
+	]);
+
+	Route::post('/feedback', [
+		'uses' => 'IndexController@postFeedback',
+		'as' => 'customer.feedback'
+	]);
 });
 
 
@@ -167,9 +226,14 @@ Route::group(['namespace' => 'Garage'], function() {
 		'as' => 'garage.booking'
 	]);
 
+	Route::get('/payment', [
+		'uses' => 'BookingController@payment',
+		'as' => 'garage.payment'
+	]);
+
 });
 
 
 Route::get('/test', function() {
-	return view('garage.payment');
+	return view('customer.feedback');
 });

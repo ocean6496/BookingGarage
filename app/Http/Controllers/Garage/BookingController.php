@@ -44,10 +44,13 @@ class BookingController extends Controller
 
         $array = $request->except('_token'); 
         $arrayId = array();
+        $price = 0;
         foreach ($array as $key => $value) {
             array_push($arrayId, $key);
+            $price += $value;
         }
 
+        $request->session()->put('total_price', $price);
         $services = Service::whereIn('id', $arrayId)->get(); 
         
         $arrayService = array();
@@ -92,7 +95,6 @@ class BookingController extends Controller
                 'password' => $password,
                 'email' => $email,
                 'role_id' => 2,
-                'garage_id' => 1,
                 'active' => 0
             ]);
 
@@ -112,9 +114,17 @@ class BookingController extends Controller
                     'checkout' => 0
                 ]);
             }
+
+            return redirect()->route('garage.payment');
         } else { 
             // return redirect()->route('garage.getUser', ['car_id' => $car_id, 'car_model_id' => $car_model_id])->with('msg', 'User was has in system');
-        }
-        
+        }       
+    }
+
+    public function payment(Request $request)
+    { 
+        $total_price = $request->session()->get('total_price');
+
+        return view('garage.payment', compact('total_price'));
     }
 }

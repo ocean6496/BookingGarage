@@ -9,10 +9,10 @@
 	        <div class="col-lg-12">
 		        <section class="panel">
 		            <header class="panel-heading">
-		                Add Garage
+		                Add Customer
 		            </header>
 		            <div class="panel-body">
-		                <form class="form-horizontal bucket-form" method="post" action="{{ route('admin.garage.add') }}">
+		                <form class="form-horizontal bucket-form" method="post" action="{{ route('admin.customer.add') }}">
 		                	{{ csrf_field() }}
 		                    <div class="form-group">
 		                        <label class="col-sm-3 control-label">Username</label>
@@ -33,9 +33,9 @@
 		                        </div>
 		                    </div>
 		                    <div class="form-group">
-		                        <label class="col-sm-3 control-label">Name</label>
+		                        <label class="col-sm-3 control-label">Full Name</label>
 		                        <div class="col-sm-6">
-		                            <input class="form-control" type="text" name="name" required="">
+		                            <input class="form-control" type="text" name="fullname" required="">
 		                        </div>
 		                    </div>
 		                    <div class="form-group">
@@ -48,12 +48,6 @@
 		                        <label class="col-sm-3 control-label">Phone</label>
 		                        <div class="col-sm-6">
 		                            <input type="text" class="form-control round-input" name="phone" required="">
-		                        </div>
-		                    </div>
-		                    <div class="form-group">
-		                        <label class="col-sm-3 control-label">Proprietor</label>
-		                        <div class="col-sm-6">
-		                            <input type="text" class="form-control round-input" name="proprietor" required="">
 		                        </div>
 		                    </div>
 		                    <div class="form-group">

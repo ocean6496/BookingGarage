@@ -1,21 +1,34 @@
 @extends('templates.garage.master')
 @section('content')
 <div class="team" id ="team">
-	<div class="container">
-		<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-    <input type="hidden" name="cmd" value="_xclick">
-    <input type="hidden" name="business" value="accounts@freelanceswitch.com">
-    <input type="hidden" name="item_name" value="Donation">
-    <input type="hidden" name="item_number" value="1">
-    <input type="hidden" name="amount" value="9.00">
-    <input type="hidden" name="no_shipping" value="0">
-    <input type="hidden" name="no_note" value="1">
-    <input type="hidden" name="currency_code" value="USD">
-    <input type="hidden" name="lc" value="AU">
-    <input type="hidden" name="bn" value="PP-BuyNowBF">
-    <input type="image" src="https://www.paypal.com/en_AU/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
-    <img alt="" border="0" src="https://www.paypal.com/en_AU/i/scr/pixel.gif" width="1" height="1">
-</form>
-	</div>
+    <div class="container payment">
+        <h1 class="title-payment">Select method to payment</h1>
+        <div id="payment"></div>
+    </div>
 </div>
+<script src="https://www.paypal.com/sdk/js?client-id=AfjM3XQ4vc6_wqcdpGkh5bOTDbKRBW6at2zsbldY7mX1BlA4wQ6Ofp_f4mCB1o0zMipatDb1ctMe6S4e"></script>
+<script>
+    paypal.Buttons({
+        createOrder: function(data, actions) {
+          // Set up the transaction
+          return actions.order.create({
+            purchase_units: [{
+              amount: {
+                value: <?php echo $total_price; ?>
+              }
+            }]
+          });
+        }
+      }).render('#payment');
+</script>
+<style type="text/css">
+    .payment {
+        border: 3px solid grey;
+        width: 70%;
+        padding: 20px;
+    }
+    .title-payment {
+        padding-bottom: 20px;
+    }
+</style>
 @endsection
