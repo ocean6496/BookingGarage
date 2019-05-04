@@ -10,16 +10,24 @@
 <script>
     paypal.Buttons({
         createOrder: function(data, actions) {
-          // Set up the transaction
-          return actions.order.create({
-            purchase_units: [{
-              amount: {
-                value: <?php echo $total_price; ?>
-              }
-            }]
-          });
+            // Set up the transaction
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: <?php echo $total_price; ?>
+                    }
+                }]
+            });
+        },
+        onApprove: function(data, actions) {
+            // Capture the funds from the transaction
+            return actions.order.capture().then(function(details) {
+                console.log('success');
+                 // Show a success message to your buyer
+                alert('Transaction completed by ' + details.payer.name.given_name);
+            });
         }
-      }).render('#payment');
+    }).render('#payment');
 </script>
 <style type="text/css">
     .payment {

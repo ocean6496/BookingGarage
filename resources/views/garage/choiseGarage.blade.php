@@ -11,12 +11,12 @@
 					<div class="clearfix"> </div>
 				</div>		
 			</div>
-			<h2 class="car-detail"><span style="color: darkgray">Your car:</span> {{ $car->name }} -  {{ $car_model->name }}</h2>
+			<!-- <h2 class="car-detail"><span style="color: darkgray">Your car:</span> {{ $car->name }} -  {{ $car_model->name }}</h2>
 			<h2 class="car-detail"><span style="color: darkgray">Service detail:</span></h2>
 			@foreach($services as $service)
 				<h4 style="color: brown; font-size: 22px">{{ $service->name }}:</h4>
 				<p> {{ $service->description }}</p>	
-			@endforeach
+			@endforeach -->
 		</div>
 		<div class="col-md-6 w3agile_newsletter_right">
 			<form action="{{ route('garage.getUser', ['$car_id' => $car->id, 'car_model_id' => $car_model->id]) }}" method="POST">
@@ -30,7 +30,7 @@
 					@endforeach
 				</select><br /><br />
 				<p class="urna">Date</p>
-				<input type="text" name="date" id="datePicker" class="input-tag" placeholder="YYYY-MM-DD" required="">
+				<input type="text" name="date" id="datePicker" class="input-tag" placeholder="YYYY-MM-DD" required="" autocomplete="off">
 				<span class="fa fa-calendar"></span>
 				<p class="urna">Time</p>
 				<div>

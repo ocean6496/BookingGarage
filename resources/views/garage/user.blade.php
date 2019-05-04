@@ -14,19 +14,35 @@
 				<h2><span style="color: darkgray">Time: </span><span class="detail">{{$time}} - {{ $date }}</span></h2>
 			</div>
 			<div class="col-md-6 w3agile_newsletter_right">
-				<form action="{{ route('garage.booking', ['car_id' => $car->id, 'car_model_id' => $car_model->id]) }}" method="GET">
+				<form action="{{ route('garage.booking', ['car_id' => $car->id, 'car_model_id' => $car_model->id]) }}" method="GET" autocomplete="off">
 					{{ csrf_field() }}
 					<h3 class="head">ACCOUNT USER</h3>
 					<p class="urna">Do you already have account?</p>
-					<p>FirstName</p>
-					<input type="text" name="firstName" class="input-tag"><br>
-					<p>LastName</p>
-					<input type="text" name="lastName" class="input-tag"><br>
-					<p>Email</p>
-					<input type="text" name="email" class="input-tag"><br>
-					<p>Password</p>
-					<input type="password" name="password" class="input-tag"><br>
-				    <input type="submit" name="" value="next" class="submit">
+					<div class="test">
+						<p>User Name</p>
+						<input type="text" name="username" class="input-tag" autocomplete="off">
+					</div>
+					<div class="test">
+						<p>Full Name</p>
+						<input type="text" name="fullname" class="input-tag">
+					</div>
+					<div class="test">
+						<p>Address</p>
+						<input type="text" name="address" class="input-tag"><br>
+					</div>
+					<div class="test">
+						<p>Phone</p>
+						<input type="text" name="phone" class="input-tag"><br>
+					</div>
+					<div class="test">
+						<p>Email</p>
+						<input type="text" name="email" class="input-tag"><br>
+					</div>
+					<div class="test">
+						<p>Password</p>
+						<input type="password" name="password" class="input-tag" autocomplete="off"><br>
+					</div>
+					    <input type="submit" name="" value="next" class="submit">
 				</form>
 			</div>
 			<div class="clearfix"> </div>
@@ -44,10 +60,10 @@
 	    border: 1px solid #fc5a0a;
 	    color: #fff;
 	    font-size: 15px;
-	    padding: 10px 15px;
-	    width: 90px;
+	    padding: 10px 15px !important;
+	    width: 20% !important;
 	    background: #fc5a0a;
-	    margin-top: 1em;
+	    margin-top: 0.8em !important;
 	    border-radius: 3px;
 	}
 	.submit:hover {
@@ -68,6 +84,10 @@
 	.detail {
 		font-size: 20px;
    		color: darkorange;
+	}
+	.test {
+		float: left;
+		margin-left: 20px; 
 	}
 </style>
 @endsection

@@ -83,7 +83,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 				 <ul class="nav navbar-nav cl-effect-14">
-					<li><a class="scroll" href="{{ route('garage.index') }}" class="active">Home</a></li>
+					<li><a class="" href="{{ route('garage.index') }}" class="active">Home</a></li>
 					<li><a class="scroll" href="#about">About</a></li>
 					<li class="sub-menu">
 						<a class="scroll" href="#service" id="sub-menu">Services</a>

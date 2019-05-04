@@ -4,12 +4,15 @@ namespace App\Http\Controllers\Garage;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\VerifyCustomer;
 use App\Models\Car;
 use App\Models\Car_model;
 use App\Models\Service;
 use App\Models\Garage;
 use App\Models\User;
 use App\Models\Booking;
+use App\Models\Customer;
 
 class BookingController extends Controller
 {
@@ -83,19 +86,30 @@ class BookingController extends Controller
 
     public function booking(Request $request, $car_id, $car_model_id)
     {
-        $firstName = $request->firstName;
-        $lastName = $request->lastName;
+        $username = $request->username;
+        $fullname = $request->fullname;
+        $phone = $request->phone;
+        $address = $request->address;
         $email = $request->email;
         $password = bcrypt($request->password);
 
         $check_has_user = User::where('email', $email)->first(); 
         if ($check_has_user == null) {
             User::insert([
-                'username' => 'customer',
+                'username' => $username,
                 'password' => $password,
                 'email' => $email,
-                'role_id' => 2,
+                'role_id' => 3,
+                'remember_token' => str_random(64),
                 'active' => 0
+            ]);
+            $user = User::where('email', $email)->first();
+
+            Customer::insert([
+                'fullname' => $fullname,
+                'address' => $address,
+                'phone' => $phone,
+                'user_id' => $user->id
             ]);
 
             $user_id = User::where('email', $email)->first()->id;
@@ -114,6 +128,14 @@ class BookingController extends Controller
                     'checkout' => 0
                 ]);
             }
+
+            $date = array(
+                        'email' => $email,
+                        'remember_token' => $user->remember_token,
+                        'user_id' => $user->id
+                    );
+
+            Mail::to('ocean06041996@gmail.com')->queue(new VerifyCustomer($date));
 
             return redirect()->route('garage.payment');
         } else { 

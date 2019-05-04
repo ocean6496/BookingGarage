@@ -66,6 +66,24 @@
                         </a>
                     </li>
                 @endif
+
+                @if (Auth::user()->role_id == 3)
+                    <li class="{{ route::currentRouteName() == 'admin.service' ? 'active' : '' }}" class="sub-menu">
+                        <a href="{{ route('admin.service') }}">
+                            <i class=" fa fa-first-order"></i>
+                            <span>Booking</span>
+                        </a>
+                    </li>
+                @endif
+
+                @if (Auth::user()->role_id == 3)
+                    <li class="{{ route::currentRouteName() == 'customer.feedback' ? 'active' : '' }}" class="sub-menu">
+                        <a href="{{ route('customer.feedback') }}">
+                            <i class=" fa fa-reply-all"></i>
+                            <span>Feedback</span>
+                        </a>
+                    </li>
+                @endif
                 <!-- <li class="sub-menu">
                     <a href="javascript:;">
                         <i class=" fa fa-bar-chart-o"></i>

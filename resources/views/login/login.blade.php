@@ -28,7 +28,7 @@
     <h1>Booking Garage</h1>
     <div class=" w3l-login-form">
         <h2>Login Here</h2>
-        <form action="{{ route('login') }}" method="post">
+        <form action="{{ route('postLogin', ['role_page_id' => 1]) }}" method="post">
             {{ csrf_field() }}
             <div class=" w3l-form-group">
                 <label>Username:</label>

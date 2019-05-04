@@ -6,17 +6,27 @@ Route::group(['namespace' => 'Auth'], function() {
 
 	Route::get('/login', [
 		'uses' => 'AuthController@getLogin',
-		'as' => 'login'
+		'as' => 'getLogin'
 	]);
 
-	Route::post('/login', [
+	Route::get('/loginCustomer', [
+		'uses' => 'AuthController@getLoginCustomer',
+		'as' => 'loginCustomer'
+	]);
+
+	Route::post('/login/{role_page_id}', [
 		'uses' => 'AuthController@postLogin',
-		'as' => 'login'
+		'as' => 'postLogin'
 	]);
 
 	Route::get('/logout', [
 		'uses' => 'AuthController@logout',
 		'as' => 'logout'
+	]);
+
+	Route::get('/verify', [
+		'uses' => 'AuthController@verify',
+		'as' => 'verify'
 	]);
 
 });
@@ -38,6 +48,11 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 
 	Route::get('/change-password', [
 		'uses' => 'IndexController@changePassword',
+		'as' => 'admin.changePassword'
+	]);
+
+	Route::post('/change-password', [
+		'uses' => 'IndexController@getChangePassword',
 		'as' => 'admin.changePassword'
 	]);
 
@@ -168,7 +183,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 
 });
 
-/*   --------- ROUTE FOR CUSTOMER ---------   */
+/*   --------- ROUTE FOR CUSTOMER ADMIN---------   */
 
 Route::group(['namespace' => 'Customer', 'prefix' => 'customer', 'middleware' => 'auth'], function() {
 	Route::get('/', [
@@ -187,6 +202,14 @@ Route::group(['namespace' => 'Customer', 'prefix' => 'customer', 'middleware' =>
 	]);
 });
 
+/*   --------- ROUTE FOR GARAGE ADMIN ---------   */
+
+Route::group(['namespace' => 'GarageAdmin', 'prefix' => 'garage', 'middleware' => 'auth'], function() {
+	Route::get('/', [
+		'uses' => 'IndexController@index',
+		'as' => 'garageAdmin.index'
+	]);
+});
 
 /*   --------- ROUTE FOR PUBLIC GARAGE ---------   */
 
@@ -235,5 +258,5 @@ Route::group(['namespace' => 'Garage'], function() {
 
 
 Route::get('/test', function() {
-	return view('customer.feedback');
+	return view('login.loginCustomer');
 });

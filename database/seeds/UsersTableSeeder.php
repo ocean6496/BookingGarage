@@ -25,10 +25,26 @@ class UsersTableSeeder extends Seeder
                 'password' => Hash::make(123456),         
                 'email' => $faker->unique()->safeEmail,
                 'role_id' => 1,
-                'active' => 0,
+                'active' => 1,
             ]);
 
-        for ($i = 0; $i < 5; $i++) {
+        User::create([
+                'username' => 'garage@gmail.com',
+                'password' => Hash::make(123456),         
+                'email' => $faker->unique()->safeEmail,
+                'role_id' => 2,
+                'active' => 1,
+            ]);
+
+        User::create([
+                'username' => 'customer@gmail.com',
+                'password' => Hash::make(123456),         
+                'email' => $faker->unique()->safeEmail,
+                'role_id' => 3,
+                'active' => 1,
+            ]);
+
+        for ($i = 0; $i < 4; $i++) {
             User::create([
                 'username' => $faker->username,
                 'password' => Hash::make(123456),         
@@ -39,7 +55,7 @@ class UsersTableSeeder extends Seeder
             ]);
         }
 
-        for ($i = 0; $i < $limit; $i++) {
+        for ($i = 0; $i < $limit-1; $i++) {
             User::create([
                 'username' => $faker->username,
                 'password' => Hash::make(123456),         

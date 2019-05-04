@@ -50,10 +50,10 @@
             @foreach($booking as $booking)
             <tr>
                 <td>{{ $booking->id }}</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><span class="text-ellipsis"></span></td>
+                <td>{{ $booking->user_name }}</td>
+                <td>{{ $booking->garage_name }}</td>
+                <td>{{ $booking->car_name }}</td>
+                <td>{{ $booking->car_model_name }}</td>
                 <td>{{ $booking->date }}</td>
                 <td>{{ $booking->time }}</td>
                 @if ($booking->checkout == 0)
@@ -61,7 +61,7 @@
                 @else 
                     <td><button class="btn btn-success">Done</button></td>
                 @endif
-                <td>
+                <td style="width: 18%">
                   <a href="" class="active" ui-toggle-class=""><button class="btn btn-warning"><i class="icon-edit"></i> edit</button></a>
                   <a href="" class="active" ui-toggle-class=""><button class="btn btn-danger"><i class="icon-trash"></i> delete</button></a>
                 </td>
@@ -74,7 +74,7 @@
       <div class="row">
         
         <div class="col-sm-5 text-center">
-          <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
+          <!-- <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small> -->
         </div>
         <div class="col-sm-7 text-right text-center-xs">                
           <ul class="pagination pagination-sm m-t-none m-b-none">
