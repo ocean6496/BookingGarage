@@ -34,12 +34,12 @@
 				<span class="fa fa-calendar"></span>
 				<p class="urna">Time</p>
 				<div>
-					<input type="radio" name="time" value="10:00 AM - 14:00 AM" required="">10:00 AM - 14:00 AM
-					<input type="radio" name="time" value="10:00 AM - 14:00 AM" required="">10:00 AM - 14:00 AM<br>
-					<input type="radio" name="time" value="10:00 AM - 14:00 AM" required="">10:00 AM - 14:00 AM
-					<input type="radio" name="time" value="10:00 AM - 14:00 AM" required="">10:00 AM - 14:00 AM<br>
-					<input type="radio" name="time" value="10:00 AM - 14:00 AM" required="">10:00 AM - 14:00 AM
-					<input type="radio" name="time" value="10:00 AM - 14:00 AM" required="">10:00 AM - 14:00 AM
+					<input type="radio" name="time" value="8:00 AM - 9:00 AM" required="">8:00 AM - 9:00 AM
+					<input type="radio" name="time" value="9:30 AM - 10:30 AM" required="">9:30 AM - 10:30 AM<br>
+					<input type="radio" name="time" value="11:00 AM - 12:00 AM" required="">11:00 AM - 12:00 AM
+					<input type="radio" name="time" value="1:00 PM - 2:00 PM" required="">1:00 PM - 2:00 PM<br>
+					<input type="radio" name="time" value="2:30 PM - 3:30 PM" required="">2:30 PM - 3:30 PM
+					<input type="radio" name="time" value="4:00 PM - 5:00 PM" required="">4:00 PM - 5:00 PM
 				</div>
 				<input type="submit" name="" value="Next" class="submit">
 			</form>
@@ -57,7 +57,7 @@
 		console.log(lat)
 	  
 	  	if (typeof lat == 'undefined') {
-	  		var location = {lat: 16.06778, lng: 108.22083};
+	  		var location = {lat: 15.57364, lng: 108.47403};
 	  	} else {
 	    	var location = {lat: lat, lng: lng};
 	  	}
@@ -71,13 +71,15 @@
 		$('#garage').change(function() {
 			var garage = $(this).val();
 			if (garage == 1) {
-				initMap(10.762622, 106.660172);
+				initMap(16.06778, 108.22083);
 			} else if (garage == 2) {
-				initMap(20.984068, 105.862511);
-			} else if (garage == 3) {
 				initMap(21.010559, 105.800362);
+			} else if (garage == 3) {
+				initMap(10.762622, 106.660172);
 			} else if (garage == 4) {
-				initMap(10.787884, 106.698402);
+				initMap(20.86481, 106.68345);
+			} else if (garage == 5) {
+				initMap(10.03711, 105.78825);
 			}
 		});
 	});

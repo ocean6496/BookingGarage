@@ -14,10 +14,21 @@
 		            <div class="panel-body">
 		                <form action="{{ route('customer.feedback') }}" class="form-horizontal bucket-form" method="post">
 		                	{{ csrf_field() }}
+		                	<div class="form-group">
+		                		<label class="col-sm-3 control-label">Garage</label>
+		                        <div class="col-sm-6">
+		                            <select class="form-control input-lg m-bot15" name="garage" required="">
+		                                <option value="">Select Garage</option>
+		                                @foreach($garages as $garage)
+		                               		<option value="{{ $garage->id }}">{{ $garage->name }}</option>
+		                                @endforeach
+		                            </select>
+		                        </div>
+		                	</div>
 		                    <div class="form-group">
 		                        <label class="col-sm-3 control-label">Message</label>
 		                        <div class="col-sm-6">
-		                            <textarea class="form-control" name="message"></textarea>
+		                            <textarea class="form-control" name="message" rows="5" required=""></textarea>
 		                        </div>
 		                    </div>
 		                    <div class="form-group">
@@ -46,6 +57,14 @@
 								  <input type="" name="start" style="display: none"  id="start_rate">
 								</div>
 		                    </div>
+		                    @if (Session::has('msg'))
+		                    <div class="form-group">
+		                    	<label class="col-sm-4 control-label"></label>
+		                        <div class="col-sm-5">
+		                            <h3 style="color: red">{{ Session::get('msg') }}</h3>
+		                        </div>
+		                    </div>
+		                    @endif
 		                    <div class="form-group">
 		                    	<label class="col-sm-5 control-label"></label>
 		                        <div class="col-sm-2">

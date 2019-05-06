@@ -27,7 +27,7 @@ class CarsTableSeeder extends Seeder
         		'description' => $faker->sentence(6, true),
         	],
         	[
-        		'name' => 'Jord',
+        		'name' => 'Ford',
         		'description' => $faker->sentence(6, true),
         	],
         	[

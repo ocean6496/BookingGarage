@@ -29,7 +29,7 @@ class AuthController extends Controller
     		$role_id = Auth::user()->role_id;
             if ($role_id == 1 && $role_page_id == 1) {              
 		        return redirect()->route('admin.index');
-            } elseif ($role_id == 2) { dd(2);
+            } elseif ($role_id == 2 && $role_page_id == 1) { 
                 return redirect()->route('garageAdmin.index');          
             } elseif ($role_id == 3 && $role_page_id == 3) { 
                 return redirect()->route('customer.index');

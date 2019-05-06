@@ -6,10 +6,10 @@
 		<div class="table-agile-info">
   <div class="panel panel-default">
     <div class="panel-heading">
-        BOOKING MANAGEMENT
+        GARAGE CUSTOMER
     </div>
     <div class="row w3-res-tb">
-      <div class="col-sm-5 m-b-xs">
+      <div class="col-sm-2 m-b-xs">
         <!-- <select class="input-sm form-control w-sm inline v-middle">
           <option value="0">Bulk action</option>
           <option value="1">Delete selected</option>
@@ -17,9 +17,12 @@
           <option value="3">Export</option>
         </select>
         <button class="btn btn-sm btn-default">Apply</button>  -->               
-        <a href=""><button class="btn btn-success"><i class="icon-plus"></i> Add</button></a>
+        <a href="{{ route('admin.service.add') }}"><button class="btn btn-success"><i class="icon-plus"></i> Add</button></a>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-7">
+        @if (Session::has('msg'))
+        <p style="color: red">{{ Session::get('msg') }}</p>
+        @endif
       </div>
       <div class="col-sm-3">
         <div class="input-group">
@@ -34,39 +37,27 @@
       <table class="table table-striped b-t b-light">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>User</th>
-            <th>Garage</th>
-            <th>Car</th>
-            <th>Car Model</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Status</th>
+            <th>No</th>
+            <th>Full Name</th>
+            <th>Address</th>
+            <th>Phone</th>
             <th>Function</th>
             <th style="width:30px;"></th>
           </tr>
         </thead>
         <tbody>
-            @foreach($bookings as $booking)
-            <tr>
-                <td>{{ $booking->id }}</td>
-                <td>{{ $booking->user_name }}</td>
-                <td>{{ $booking->garage_name }}</td>
-                <td>{{ $booking->car_name }}</td>
-                <td>{{ $booking->car_model_name }}</td>
-                <td>{{ $booking->date }}</td>
-                <td>{{ $booking->time }}</td>
-                @if ($booking->checkout == 0)
-                    <td><button class="btn btn-info">Pending</button></td>
-                @else 
-                    <td><button class="btn btn-success">Payment</button></td>
-                @endif
-                <td style="width: 18%">
-                  <a href="" class="active" ui-toggle-class=""><button class="btn btn-warning"><i class="icon-edit"></i> edit</button></a>
-                  <a href="" class="active" ui-toggle-class=""><button class="btn btn-danger"><i class="icon-trash"></i> delete</button></a>
-                </td>
-            </tr>
-            @endforeach
+          @foreach($customers as $key => $customer)
+          <tr>
+            <td>{{ $key+1 }}</td>
+            <td>{{ $customer->fullname }}</td>
+            <td><span class="text-ellipsis">{{ $customer->address }}</span></td>
+            <td>{{ $customer->phone }}</td>
+            <td>
+              <a href="" class="active" ui-toggle-class=""><button class="btn btn-warning"><i class="icon-edit"></i> edit</button></a>
+              <a href="" class="active" ui-toggle-class=""><button class="btn btn-danger"><i class="icon-trash"></i> delete</button></a>
+            </td>
+          </tr>
+          @endforeach
         </tbody>
       </table>
     </div>
@@ -84,7 +75,6 @@
             <li><a href="">3</a></li>
             <li><a href="">4</a></li>
             <li><a href=""><i class="fa fa-chevron-right"></i></a></li> -->
-            {{ $bookings->links() }}
           </ul>
         </div>
       </div>

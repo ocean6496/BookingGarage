@@ -21,14 +21,52 @@ class GaragesTableSeeder extends Seeder
 
         $garages =  User::where('role_id', 2)->get(); 
 
-        foreach ($garages as $garage) {
-        	Garage::create([
-        		'name' => $faker->name,
-                'address' => $faker->address,
-        		'phone' => $faker->phoneNumber,
-        		'proprietor' => $faker->name,
-                'user_id' => $garage->id
-        	]);
+        foreach ($garages as $key => $garage) {
+            if ($key == 0) {
+            	Garage::insert([
+            		'name' => $faker->name,
+                    'address' => 'Hai Chau - Da Nang',
+            		'phone' => $faker->phoneNumber,
+            		'proprietor' => $faker->name,
+                    'user_id' => $garage->id
+            	]);
+            }
+            if ($key == 1) {
+                Garage::insert([
+                    'name' => $faker->name,
+                    'address' => 'Hoan Kiem - Ha Noi',
+                    'phone' => $faker->phoneNumber,
+                    'proprietor' => $faker->name,
+                    'user_id' => $garage->id
+                ]);
+            }
+            if ($key == 2) {
+                Garage::insert([
+                    'name' => $faker->name,
+                    'address' => 'Quan 10 - Ho Chi Minh',
+                    'phone' => $faker->phoneNumber,
+                    'proprietor' => $faker->name,
+                    'user_id' => $garage->id
+                ]);
+            }
+            if ($key == 3) {
+                Garage::insert([
+                    'name' => $faker->name,
+                    'address' => 'Hai Phong - Hai Phong',
+                    'phone' => $faker->phoneNumber,
+                    'proprietor' => $faker->name,
+                    'user_id' => $garage->id
+                ]);
+            }
+            if ($key == 4) {
+                Garage::insert([
+                    'name' => $faker->name,
+                    'address' => 'Ninh Kieu - Can Tho',
+                    'phone' => $faker->phoneNumber,
+                    'proprietor' => $faker->name,
+                    'user_id' => $garage->id
+                ]);
+            }
         }
     }
 }

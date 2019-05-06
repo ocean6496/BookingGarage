@@ -43,7 +43,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             ADMIN
         </a>
     @elseif (Auth::user()->role_id == 2)
-        <a href="{{ route('customer.index') }}" class="logo">
+        <a href="{{ route('garageAdmin.index') }}" class="logo">
             GARAGE
         </a>
         @elseif (Auth::user()->role_id == 3)
@@ -131,7 +131,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
 
                 <i class="fa fa-bell-o"></i>
-                <span class="badge bg-important">{{-- $count_notifications --}}</span>
+                <span class="badge bg-important">{{-- $count_notifications --}}1</span>
             </a>
             <ul class="dropdown-menu extended notification">
                 <li>
@@ -142,7 +142,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="alert alert-info clearfix">
                         <span class="alert-icon"><i class="fa fa-bolt"></i></span>
                         <div class="noti-info">
-                            <a href="#">{{-- $notification->message --}}</a>
+                            <a href="#">{{-- $notification->message --}}Change Password Success</a>
                         </div>
                     </div>
                 </li>

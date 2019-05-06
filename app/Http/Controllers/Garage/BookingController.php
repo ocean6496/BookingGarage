@@ -13,6 +13,7 @@ use App\Models\Garage;
 use App\Models\User;
 use App\Models\Booking;
 use App\Models\Customer;
+use App\Models\Garage_customer;
 
 class BookingController extends Controller
 {
@@ -114,6 +115,11 @@ class BookingController extends Controller
 
             $user_id = User::where('email', $email)->first()->id;
 
+            Garage_customer::insert([
+                'garage_id' => $request->session()->get('garage'),
+                'user_id' => $user_id
+            ]);
+
             $arrayServiceId = $request->session()->get('service');
 
             foreach ($arrayServiceId as $value) {
@@ -135,18 +141,27 @@ class BookingController extends Controller
                         'user_id' => $user->id
                     );
 
-            Mail::to('ocean06041996@gmail.com')->queue(new VerifyCustomer($date));
+            Mail::to('ocean06041996@gmail.com')->send(new VerifyCustomer($date));
 
-            return redirect()->route('garage.payment');
+            $access_token = $user->remember_token; 
+
+            return redirect()->route('garage.payment', ['access_token' => $access_token, 'id' => $user_id]);
         } else { 
             // return redirect()->route('garage.getUser', ['car_id' => $car_id, 'car_model_id' => $car_model_id])->with('msg', 'User was has in system');
         }       
     }
 
-    public function payment(Request $request)
+    public function payment($access_token , $user_id, Request $request)
     { 
         $total_price = $request->session()->get('total_price');
 
-        return view('garage.payment', compact('total_price'));
+        return view('garage.payment', compact('total_price', 'access_token', 'user_id'));
+    }
+
+    public function bookingSuccess($access_token, $id)
+    {   
+        Booking::where('user_id', $id)->update(['checkout' => 1]);
+
+        return view('garage.success');
     }
 }

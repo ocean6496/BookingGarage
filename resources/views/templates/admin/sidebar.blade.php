@@ -58,11 +58,38 @@
                 </li>
                 @endif
 
+                @if (Auth::user()->role_id == 1)
+                    <li class="sub-menu">
+                        <a class="{{ route::currentRouteName() == 'admin.feedback' ? 'active' : '' }}" href="{{ route('admin.feedback') }}">
+                            <i class=" fa fa-reply-all"></i>
+                            <span>Feedback</span>
+                        </a>
+                    </li>
+                @endif
+
                 @if (Auth::user()->role_id == 2)
-                    <li class="{{ route::currentRouteName() == 'admin.service' ? 'active' : '' }}" class="sub-menu">
-                        <a href="{{ route('admin.service') }}">
+                    <li class="sub-menu">
+                        <a class="{{ route::currentRouteName() == 'admin.service' ? 'active' : '' }}" href="{{ route('garageAdmin.booking') }}">
                             <i class=" fa fa-first-order"></i>
                             <span>Booking</span>
+                        </a>
+                    </li>
+                @endif
+
+                @if (Auth::user()->role_id == 2)
+                    <li class="sub-menu">
+                        <a class="{{ route::currentRouteName() == 'garageAdmin.customer' ? 'active' : '' }}" href="{{ route('garageAdmin.customer') }}">
+                            <i class=" fa fa-street-view"></i>
+                            <span>Customer</span>
+                        </a>
+                    </li>
+                @endif
+
+                @if (Auth::user()->role_id == 2)
+                    <li class="sub-menu">
+                        <a class="{{ route::currentRouteName() == 'garageAdmin.feedback' ? 'active' : '' }}" href="{{ route('garageAdmin.feedback') }}">
+                            <i class=" fa fa-reply-all"></i>
+                            <span>Feedback</span>
                         </a>
                     </li>
                 @endif
