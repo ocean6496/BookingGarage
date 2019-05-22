@@ -582,7 +582,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 		<div class="w3agile_footer_copy">
-				<p>&copy; 2016 Car Towing. All rights reserved | Design by <a href="http://w3layouts.com/">Ocean</a></p>
+				<p>&copy; 2019 Car Towing. All rights reserved | Design by <a href="http://w3layouts.com/">Ocean</a></p>
 			</div>
 		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 <!-- //footer -->

@@ -7,14 +7,14 @@
 			<h3 class="head">CHOOSE YOUR CAR</h3>
 			<p class="urna">You choose car and model to book our service.</p>
 			<label>Car</label><br>
-			<select name="car" id="car" required="">
+			<select name="car" id="car" required="" class="input-lg m-bot15">
 				<option value="">Please select your car brand</option>
 				@foreach($cars as $car)
 				<option value="{{ $car->id }}">{{ $car->name }}</option>
 				@endforeach
 			</select><br /><br />
 			<label>Car Model</label><br>
-			<select name="car_model" required="">
+			<select name="car_model" required="" class="input-lg m-bot15">
 				<option value="">Please select your car before</option>
 			</select><br /><br>
 			<input type="submit" name="" value="Next" class="submit">
@@ -58,7 +58,7 @@
 </script>
 <style type="text/css">
 	input, select, textarea {
-		width: 250px;
+		width: 300px;
 		padding: 7px;
 		border-radius: 3px;
 	}

@@ -18,12 +18,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Customer extends Model
 {
-    use SoftDeletes;
+    
 
     public $table = 'customers';
     
 
-    protected $dates = ['deleted_at'];
+    
 
 
     public $fillable = [

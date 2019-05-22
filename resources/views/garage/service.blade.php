@@ -23,7 +23,8 @@
 			</tr>
 			@endforeach
 			<tr>
-				<th colspan="2">Total</th>
+				<th></th>
+				<th>Total</th>
 				<th id="total">$ 0</th>
 				<th></th>
 			</tr>
@@ -33,20 +34,20 @@
 	</div>
 </div>
 <script type="text/javascript">
-	var temp = 0;
+	var temp = 0.00;
 	function toggleCheckbox(element) {
 		if (element.checked == true) {
 			var a = element.value;
-			var b = parseInt(a)
+			var b = parseFloat(Number(a).toFixed(2))
 			temp += b;
 			console.log(temp)
-			document.getElementById('total').innerHTML = '$ ' + temp
+			document.getElementById('total').innerHTML = '$ ' + parseFloat(Number(temp).toFixed(2))
 		} else {
 			var a = element.value;
-			var b = parseInt(a)
+			var b = parseFloat(Number(a).toFixed(2))
 			temp -= b;
 			console.log(temp)
-			document.getElementById('total').innerHTML = '$ ' + temp
+			document.getElementById('total').innerHTML = '$ ' + parseFloat(Number(temp).toFixed(2))
 		}
 	}
 </script>
@@ -62,7 +63,7 @@
 	    padding: 10px 15px;
 	    width: 90px;
 	    background: #fc5a0a;
-	    margin-top: 1em;
+	    /*margin-top: 1em;*/
 	    border-radius: 3px;
 	}
 	.submit:hover {

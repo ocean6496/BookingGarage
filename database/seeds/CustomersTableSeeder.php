@@ -28,8 +28,7 @@ class CustomersTableSeeder extends Seeder
         		'fullname' => $faker->name,
         		'address' => $faker->address,
         		'phone' => $faker->phoneNumber,
-        		'user_id' => $customer->id,
-        		'garage_id' => rand(1, $countGarages),
+        		'user_id' => $customer->id
         	]);
         }
     }

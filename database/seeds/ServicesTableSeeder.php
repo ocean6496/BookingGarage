@@ -21,22 +21,22 @@ class ServicesTableSeeder extends Seeder
         	[
         		'name' => 'tyres',
         		'description' => $faker->sentence(9, true),
-        		'price' => '$34.32'
+        		'price' => 34.32
         	],
         	[
         		'name' => 'exhaust',
         		'description' => $faker->sentence(9, true),
-        		'price' => '$56.89'
+        		'price' => 56.89
         	],
 			[
         		'name' => 'clutches',
         		'description' => $faker->sentence(9, true),
-        		'price' => '$54.6'
+        		'price' => 54.6
         	],
         	[
         		'name' => 'batteries',
         		'description' => $faker->sentence(9, true),
-        		'price' => '$29.83'
+        		'price' => 29.83
         	],
         ]);
     }

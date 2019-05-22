@@ -19,9 +19,7 @@ class CreateCustomersTable extends Migration
             $table->string('address');
             $table->string('phone');
             $table->integer('user_id');
-            $table->integer('garage_id');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

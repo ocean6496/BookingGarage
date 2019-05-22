@@ -4,12 +4,16 @@ namespace App\Http\Controllers\Garage;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\VerifyCustomer;
 use App\Models\Car;
 use App\Models\Car_model;
 use App\Models\Service;
 use App\Models\Garage;
 use App\Models\User;
 use App\Models\Booking;
+use App\Models\Customer;
+use App\Models\Garage_customer;
 
 class BookingController extends Controller
 {
@@ -44,10 +48,13 @@ class BookingController extends Controller
 
         $array = $request->except('_token'); 
         $arrayId = array();
+        $price = 0;
         foreach ($array as $key => $value) {
             array_push($arrayId, $key);
+            $price += $value;
         }
 
+        $request->session()->put('total_price', $price);
         $services = Service::whereIn('id', $arrayId)->get(); 
         
         $arrayService = array();
@@ -80,23 +87,38 @@ class BookingController extends Controller
 
     public function booking(Request $request, $car_id, $car_model_id)
     {
-        $firstName = $request->firstName;
-        $lastName = $request->lastName;
+        $username = $request->username;
+        $fullname = $request->fullname;
+        $phone = $request->phone;
+        $address = $request->address;
         $email = $request->email;
         $password = bcrypt($request->password);
 
         $check_has_user = User::where('email', $email)->first(); 
         if ($check_has_user == null) {
             User::insert([
-                'username' => 'customer',
+                'username' => $username,
                 'password' => $password,
                 'email' => $email,
-                'role_id' => 2,
-                'garage_id' => 1,
+                'role_id' => 3,
+                'remember_token' => str_random(64),
                 'active' => 0
+            ]);
+            $user = User::where('email', $email)->first();
+
+            Customer::insert([
+                'fullname' => $fullname,
+                'address' => $address,
+                'phone' => $phone,
+                'user_id' => $user->id
             ]);
 
             $user_id = User::where('email', $email)->first()->id;
+
+            Garage_customer::insert([
+                'garage_id' => $request->session()->get('garage'),
+                'user_id' => $user_id
+            ]);
 
             $arrayServiceId = $request->session()->get('service');
 
@@ -112,9 +134,34 @@ class BookingController extends Controller
                     'checkout' => 0
                 ]);
             }
+
+            $date = array(
+                        'email' => $email,
+                        'remember_token' => $user->remember_token,
+                        'user_id' => $user->id
+                    );
+
+            Mail::to('ocean06041996@gmail.com')->send(new VerifyCustomer($date));
+
+            $access_token = $user->remember_token; 
+
+            return redirect()->route('garage.payment', ['access_token' => $access_token, 'id' => $user_id]);
         } else { 
             // return redirect()->route('garage.getUser', ['car_id' => $car_id, 'car_model_id' => $car_model_id])->with('msg', 'User was has in system');
-        }
-        
+        }       
+    }
+
+    public function payment($access_token , $user_id, Request $request)
+    { 
+        $total_price = $request->session()->get('total_price');
+
+        return view('garage.payment', compact('total_price', 'access_token', 'user_id'));
+    }
+
+    public function bookingSuccess($access_token, $id)
+    {   
+        Booking::where('user_id', $id)->update(['checkout' => 1]);
+
+        return view('garage.success');
     }
 }

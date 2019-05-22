@@ -6,17 +6,27 @@ Route::group(['namespace' => 'Auth'], function() {
 
 	Route::get('/login', [
 		'uses' => 'AuthController@getLogin',
-		'as' => 'login'
+		'as' => 'getLogin'
 	]);
 
-	Route::post('/login', [
+	Route::get('/loginCustomer', [
+		'uses' => 'AuthController@getLoginCustomer',
+		'as' => 'loginCustomer'
+	]);
+
+	Route::post('/login/{role_page_id}', [
 		'uses' => 'AuthController@postLogin',
-		'as' => 'login'
+		'as' => 'postLogin'
 	]);
 
 	Route::get('/logout', [
 		'uses' => 'AuthController@logout',
 		'as' => 'logout'
+	]);
+
+	Route::get('/verify', [
+		'uses' => 'AuthController@verify',
+		'as' => 'verify'
 	]);
 
 });
@@ -36,6 +46,18 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 		'as' => 'admin.profile'
 	]);
 
+	Route::get('/change-password', [
+		'uses' => 'IndexController@changePassword',
+		'as' => 'admin.changePassword'
+	]);
+
+	Route::post('/change-password', [
+		'uses' => 'IndexController@getChangePassword',
+		'as' => 'admin.changePassword'
+	]);
+
+	/*     ===== Route for garage =====     */
+
 	Route::get('/garage', [
 		'uses' => 'GarageController@index',
 		'as' => 'admin.garage'
@@ -46,9 +68,56 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 		'as' => 'admin.garage.add'
 	]);
 
-	Route::get('/garage/edit', [
+	Route::post('/garage/add', [
+		'uses' => 'GarageController@postAdd',
+		'as' => 'admin.garage.add'
+	]);
+
+	Route::get('/garage/edit/{id}', [
 		'uses' => 'GarageController@getEdit',
 		'as' => 'admin.garage.edit'
+	]);
+
+	Route::post('/garage/edit/{id}', [
+		'uses' => 'GarageController@postEdit',
+		'as' => 'admin.garage.edit'
+	]);
+
+	Route::get('/garage/delete/{id}', [
+		'uses' => 'GarageController@delete',
+		'as' => 'admin.garage.delete'
+	]);
+
+	/*     ===== Route for customer =====     */
+
+	Route::get('/customer', [
+		'uses' => 'CustomerController@index',
+		'as' => 'admin.customer'
+	]);
+
+	Route::get('/customer/add', [
+		'uses' => 'CustomerController@getAdd',
+		'as' => 'admin.customer.add'
+	]);
+
+	Route::post('/customer/add', [
+		'uses' => 'CustomerController@postAdd',
+		'as' => 'admin.customer.add'
+	]);
+
+	Route::get('/customer/edit/{id}', [
+		'uses' => 'CustomerController@getEdit',
+		'as' => 'admin.customer.edit'
+	]);
+
+	Route::post('/customer/edit/{id}', [
+		'uses' => 'CustomerController@postEdit',
+		'as' => 'admin.customer.edit'
+	]);
+
+	Route::get('/customer/delete/{id}', [
+		'uses' => 'CustomerController@delete',
+		'as' => 'admin.customer.delete'
 	]);
 
 	/*     ===== Route for service =====     */
@@ -112,8 +181,57 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 		'as' => 'admin.booking'
 	]);
 
+	/*     ===== Route for feedback =====     */
+
+	Route::get('/feedback', [
+		'uses' => 'FeedbackController@getFeedback',
+		'as' => 'admin.feedback'
+	]);
+
 });
 
+/*   --------- ROUTE FOR CUSTOMER ADMIN---------   */
+
+Route::group(['namespace' => 'Customer', 'prefix' => 'customer', 'middleware' => 'auth'], function() {
+	Route::get('/', [
+		'uses' => 'IndexController@index',
+		'as' => 'customer.index'
+	]);
+
+	Route::get('/feedback', [
+		'uses' => 'IndexController@getFeedback',
+		'as' => 'customer.feedback'
+	]);
+
+	Route::post('/feedback', [
+		'uses' => 'IndexController@postFeedback',
+		'as' => 'customer.feedback'
+	]);
+});
+
+/*   --------- ROUTE FOR GARAGE ADMIN ---------   */
+
+Route::group(['namespace' => 'GarageAdmin', 'prefix' => 'garage', 'middleware' => 'auth'], function() {
+	Route::get('/', [
+		'uses' => 'IndexController@index',
+		'as' => 'garageAdmin.index'
+	]);
+
+	Route::get('/customer', [
+		'uses' => 'CustomerController@getCustomer',
+		'as' => 'garageAdmin.customer'
+	]);
+
+	Route::get('/booking', [
+		'uses' => 'BookingController@getBooking',
+		'as' => 'garageAdmin.booking'
+	]);
+
+	Route::get('/feedback', [
+		'uses' => 'FeedbackController@getFeedback',
+		'as' => 'garageAdmin.feedback'
+	]);
+});
 
 /*   --------- ROUTE FOR PUBLIC GARAGE ---------   */
 
@@ -153,9 +271,20 @@ Route::group(['namespace' => 'Garage'], function() {
 		'as' => 'garage.booking'
 	]);
 
+	Route::get('/payment/{access_token}-{id}', [
+		'uses' => 'BookingController@payment',
+		'as' => 'garage.payment'
+	]);
+
+	Route::get('/booking-success/{access_token}-{id}', [
+		'uses' => 'BookingController@bookingSuccess',
+		'as' => 'garage.success'
+	]);
+
+
 });
 
 
 Route::get('/test', function() {
-	return view('admin.customer');
+	return view('garage.success');
 });
