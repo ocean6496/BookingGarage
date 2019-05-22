@@ -15,7 +15,7 @@
             return actions.order.create({
                 purchase_units: [{
                     amount: {
-                        value: 1
+                        value: <?php echo $total_price; ?>
                     }
                 }]
             });

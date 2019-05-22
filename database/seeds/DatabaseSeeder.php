@@ -21,5 +21,8 @@ class DatabaseSeeder extends Seeder
 
         //feeback
         $this->call(FeedbacksTableSeeder::class);
+
+        //booking
+        $this->call(BookingsTableSeeder::class);
     }
 }

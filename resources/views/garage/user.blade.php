@@ -20,7 +20,7 @@
 					<p class="urna">Do you already have account?</p>
 					<div class="test">
 						<p>User Name</p>
-						<input type="text" name="username" class="input-tag" autocomplete="off">
+						<input type="text" name="username" class="input-tag" autocomplete="false">
 					</div>
 					<div class="test">
 						<p>Full Name</p>
@@ -40,7 +40,7 @@
 					</div>
 					<div class="test">
 						<p>Password</p>
-						<input type="password" name="password" class="input-tag" autocomplete="off"><br>
+						<input type="password" name="password" class="input-tag" autocomplete="new-password"><br>
 					</div>
 					    <input type="submit" name="" value="next" class="submit">
 				</form>
