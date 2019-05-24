@@ -1,97 +1,94 @@
-@extends('templates.admin.master')
+@extends('templates.adminTLE.master')
 @section('content')
-<!--main content start-->
-<section id="main-content">
-	<section class="wrapper">
-		<div class="table-agile-info">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-        FEEDBACK MANAGEMENT
-    </div>
-    <div class="row w3-res-tb">
-      <div class="col-sm-2 m-b-xs">             
-        <a href="{{ route('admin.service.add') }}"><button class="btn btn-success"><i class="icon-plus"></i> Add</button></a>
-      </div>
-      <div class="col-sm-7">
-        @if (Session::has('msg'))
-        <p style="color: red">{{ Session::get('msg') }}</p>
-        @endif
-      </div>
-      <div class="col-sm-3">
-        <div class="input-group">
-          <input type="text" class="input-sm form-control" placeholder="Search">
-          <span class="input-group-btn">
-            <button class="btn btn-sm btn-default" type="button">Search</button>
-          </span>
-        </div>
-      </div>
-    </div>
-    <div class="table-responsive">
-      <table class="table table-striped b-t b-light">
-        <thead>
-          <tr>
-            <th>No</th>
-            <th>Customer Email</th>
-            <th>Message</th>
-            <th>Start Rated</th>
-            <th>Function</th>
-            <th style="width:30px;"></th>
-          </tr>
-        </thead>
-        <tbody>
-          @foreach($feedbacks as $key => $feedback)
-          <tr>
-            <td>{{ $key+1 }}</td>
-            <td>{{ $feedback->email }}</td>
-            <td><span class="text-ellipsis">{{ $feedback->message }}</span></td>
-            <td>
-                <div class='rating-stars'>
-                    <ul id='stars'>
-                      @for($i=1; $i<=5 ; $i++)
-                        @if($i <= $feedback->start_rate)
-                            <li class='star selected' title='Poor' data-value='1'>
-                              <i class='fa fa-star fa-fw'></i>
-                            </li>
-                        @else
-                            <li class='star' title='Poor' data-value='1'>
-                              <i class='fa fa-star fa-fw'></i>
-                            </li>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Management feedback
+            <small></small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-reply-all"></i> Feedback</a></li>
+            <li class="active">Dashboard</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                <div class="box-header" style="padding: 10px 0px">
+                <!-- <h3 class="box-title">Hover Data Table</h3> -->
+                    <div class="col-xs-1">
+                        <a href="">
+                            <!-- <button class="btn btn-success"><i class="fa fa-plus"></i> Add</button> -->
+                        </a>
+                    </div>
+                    <div class="col-xs-6">
+                        @if(Session::has('msg'))
+                            <h4 style="color: red">{{ Session::get('msg') }}</h4>
                         @endif
-                      @endfor  
-                    </ul>
+                    </div>
                 </div>
-            </td>
-            <td>
-              <a href="" class="active" ui-toggle-class=""><button class="btn btn-info"><i class="icon-edit"></i> active</button></a>
-              <a href="" class="active" ui-toggle-class=""><button class="btn btn-danger"><i class="icon-trash"></i> delete</button></a>
-            </td>
-          </tr>
-          @endforeach
-        </tbody>
-      </table>
-    </div>
-    <footer class="panel-footer">
-      <div class="row">
-        
-        <div class="col-sm-5 text-center">
-          <!-- <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small> -->
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table id="example2" class="table table-bordered table-hover">
+                        <thead>
+                          <tr>
+                            <th>No</th>
+                            <th>Customer Email</th>
+                            <th>Message</th>
+                            <th>Start Rated</th>
+                            <th>Function</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          @foreach($feedbacks as $key => $feedback)
+                          <tr>
+                            <td>{{ $key+1 }}</td>
+                            <td>{{ $feedback->email }}</td>
+                            <td><span class="text-ellipsis">{{ $feedback->message }}</span></td>
+                            <td>
+                                <div class='rating-stars'>
+                                    <ul id='stars'>
+                                      @for($i=1; $i<=5 ; $i++)
+                                        @if($i <= $feedback->start_rate)
+                                            <li class='star selected' title='Poor' data-value='1'>
+                                              <i class='fa fa-star fa-fw'></i>
+                                            </li>
+                                        @else
+                                            <li class='star' title='Poor' data-value='1'>
+                                              <i class='fa fa-star fa-fw'></i>
+                                            </li>
+                                        @endif
+                                      @endfor  
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                              <a href="" class="active" ui-toggle-class=""><button class="btn btn-info"><i class="fa fa-edit"></i> active</button></a>
+                              <a href="" class="active" ui-toggle-class=""><button class="btn btn-danger"><i class="fa fa-trash"></i> delete</button></a>
+                            </td>
+                          </tr>
+                          @endforeach
+                        </tbody>
+                    </table>
+                    <div style="text-align-last: right; padding: 0px 10px">
+                        {{ $feedbacks->links() }}
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
         </div>
-        <div class="col-sm-7 text-right text-center-xs">                
-          <ul class="pagination pagination-sm m-t-none m-b-none">
-            <!-- <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-            <li><a href="">1</a></li>
-            <li><a href="">2</a></li>
-            <li><a href="">3</a></li>
-            <li><a href="">4</a></li>
-            <li><a href=""><i class="fa fa-chevron-right"></i></a></li> -->
-            {{ $feedbacks->links() }}
-          </ul>
+        <!-- /.col -->
         </div>
-      </div>
-    </footer>
-  </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
 </div>
-</section>
+<!-- /.content-wrapper -->
 <style type="text/css">
   .rating-stars ul {
   list-style-type:none;
@@ -123,3 +120,4 @@
 
 </style>
 @endsection
+
