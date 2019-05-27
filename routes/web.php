@@ -231,6 +231,38 @@ Route::group(['namespace' => 'GarageAdmin', 'prefix' => 'garage', 'middleware' =
 		'uses' => 'FeedbackController@getFeedback',
 		'as' => 'garageAdmin.feedback'
 	]);
+
+	/*     ===== Route for service =====     */
+
+	Route::get('/service', [
+		'uses' => 'ServiceController@getService',
+		'as' => 'garageAdmin.service'
+	]);
+
+	Route::get('/service/add', [
+		'uses' => 'ServiceController@getAdd',
+		'as' => 'garageAdmin.service.add'
+	]);
+
+	Route::post('/service/add', [
+		'uses' => 'ServiceController@postAdd',
+		'as' => 'garageAdmin.service.add'
+	]);
+
+	Route::get('/service/edit/{id}', [
+		'uses' => 'ServiceController@getEdit',
+		'as' => 'garageAdmin.service.edit'
+	]);
+
+	Route::post('/service/edit/{id}', [
+		'uses' => 'ServiceController@postEdit',
+		'as' => 'garageAdmin.service.edit'
+	]);
+
+	Route::get('/service/delete/{id}', [
+		'uses' => 'ServiceController@delete',
+		'as' => 'garageAdmin.service.delete'
+	]);
 });
 
 /*   --------- ROUTE FOR PUBLIC GARAGE ---------   */
