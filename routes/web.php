@@ -316,6 +316,13 @@ Route::group(['namespace' => 'Garage'], function() {
 
 });
 
+/*   --------- ROUTE FOR CHAT BOT ---------   */
+
+Route::post('botman/chatBot', [
+	'uses' => 'Garage\ChatBotController@chatBot'
+]);
+
+
 
 Route::get('/test', function() {
 	return view('garage.success');

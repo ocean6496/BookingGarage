@@ -37,9 +37,8 @@
 		</div>
 	</div>
 		<div class="w3agile_footer_copy">
-				<p>&copy; 2019 Car Towing. All rights reserved | Design by <a href="http://w3layouts.com/">Ocean</a></p>
-			</div>
-		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+			<p>&copy; 2019 Car Towing. All rights reserved | Design by <a href="http://w3layouts.com/">Ocean</a></p>
+		</div>
 <!-- //footer -->
 <!-- js files -->
 <!-- swipe box js -->

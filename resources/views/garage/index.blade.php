@@ -21,6 +21,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="/templates/garage/js/modernizr.custom.js"></script>
 <link href="//fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+<!-- js chatbox -->
+	<script>
+        var botmanWidget = {
+            // frameEndpoint: '/chat.html',
+            introMessage: 'Hi, Welcome to visit our website!',
+            chatServer : 'chatBot', 
+            title: 'Chatbot', 
+            mainColor: '#408591',
+            bubbleBackground: '#03A9F4',
+            aboutText: '',
+            bubbleAvatarUrl: 'http://127.0.0.1:8000/templates/garage/images/chat.png',
+            // desktopHeight: '350px',
+            // desktopWidth: '320px',
+        }; 
+    </script>
+    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+<!-- end js chatbox -->
 <!-- /js files -->
 </head>
 <body>
@@ -584,7 +601,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="w3agile_footer_copy">
 				<p>&copy; 2019 Car Towing. All rights reserved | Design by <a href="http://w3layouts.com/">Ocean</a></p>
 			</div>
-		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+		<!-- <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a> -->
 <!-- //footer -->
 <!-- js files -->
 <!-- swipe box js -->
