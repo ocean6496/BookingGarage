@@ -1,4 +1,7 @@
 @extends('templates.admin.master')
+@section('title')
+    Management Service
+@endsection
 @section('content')
 <!--main content start-->
 <section id="main-content">
@@ -53,8 +56,8 @@
             <td><span class="text-ellipsis">{{ $service->description }}</span></td>
             <td>{{ $service->price }}</td>
             <td style="width: 18%">
-              <a href="{{ route('admin.service.edit', ['id' => $service->id]) }}" class="active" ui-toggle-class=""><button class="btn btn-warning"><i class="icon-edit"></i> edit</button></a>
-              <a href="{{ route('admin.service.delete', ['id' => $service->id]) }}" class="active" ui-toggle-class=""><button class="btn btn-danger"><i class="icon-trash"></i> delete</button></a>
+              <a href="{{ route('garageAdmin.service.edit', ['id' => $service->id]) }}" class="active" ui-toggle-class=""><button class="btn btn-warning"><i class="icon-edit"></i> edit</button></a>
+              <a href="{{ route('garageAdmin.service.delete', ['id' => $service->id]) }}" class="active" ui-toggle-class=""><button class="btn btn-danger"><i class="icon-trash"></i> delete</button></a>
             </td>
           </tr>
           @endforeach

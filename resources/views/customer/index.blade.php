@@ -1,4 +1,7 @@
 @extends('templates.admin.master')
+@section('title')
+    Booking
+@endsection
 @section('content')
 <!--main content start-->
 <section id="main-content">

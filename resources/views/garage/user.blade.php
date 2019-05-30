@@ -4,20 +4,22 @@
 	<div class="newsletter" id="contact">
 		<div class="container">
 			<div class="col-md-6 w3agile_newsletter_left">
-				<h2><span style="color: darkgray">Your car:</span><span class="car-detail">{{ $car->name }} -  {{ $car_model->name }}</span></h2>
-				<h2><span style="color: darkgray">Service detail:</span></h2>
+				<h2 class="h2-tag"><span style="color: darkgray">Your car:</span><span class="car-detail">  {{ $car->name }} -  {{ $car_model->name }}</span></h2>
+				<h2 class="h2-tag"><span style="color: darkgray">Service detail:</span></h2>
 				@foreach($services as $service)
 					<h4>{{ $service->name }}:</h4>
-					<p> {{ $service->description }}</p>	
+					<p class="p-tag"> {{ $service->description }}</p>	
 				@endforeach
-				<h2><span style="color: darkgray">Garage: </span><span class="detail">{{ $garage->address }}</span></h2>
-				<h2><span style="color: darkgray">Time: </span><span class="detail">{{$time}} - {{ $date }}</span></h2>
+				<h2 class="h2-tag"><span style="color: darkgray">Garage: </span><span class="detail">{{ $garage->address }}</span></h2>
+				<h2 class="h2-tag"><span style="color: darkgray">Date: </span><span class="detail">{{ $date }}</span></h2>
+				<h2 class="h2-tag"><span style="color: darkgray">Time: </span><span class="detail">{{ $time }}</span></h2>
 			</div>
 			<div class="col-md-6 w3agile_newsletter_right">
 				<form action="{{ route('garage.booking', ['car_id' => $car->id, 'car_model_id' => $car_model->id]) }}" method="GET" autocomplete="off">
 					{{ csrf_field() }}
 					<h3 class="head">ACCOUNT USER</h3>
 					<p class="urna">Do you already have account?</p>
+					<h5>If you have an account, just enter your email and password.</h5>
 					<div class="test">
 						<p>User Name</p>
 						<input type="text" name="username" class="input-tag" autocomplete="false">
@@ -75,7 +77,7 @@
 		margin: 0px !important;
 	}
 	.newsletter {
-	    padding: 3.5em 0 7em 0;
+	    padding: 2.5em 0 7em 0;
 	}
 	.car-detail {
 		color: brown;
@@ -88,6 +90,13 @@
 	.test {
 		float: left;
 		margin-left: 20px; 
+	}
+	.p-tag {
+	    margin: 0.5em 1.5em !important;
+	    color: #c15656 !important;
+	}
+	.h2-tag {
+		margin: 6px 0px;
 	}
 </style>
 @endsection

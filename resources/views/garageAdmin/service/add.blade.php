@@ -1,4 +1,7 @@
 @extends('templates.admin.master')
+@section('title')
+    Add Service
+@endsection
 @section('content')
 <section id="main-content">
 	<section class="wrapper">

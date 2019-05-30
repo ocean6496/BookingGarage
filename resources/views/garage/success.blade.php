@@ -1,4 +1,7 @@
 @extends('templates.garage.master')
+@section('title')
+	Booking Success
+@endsection
 @section('content')
 <div class="team" id ="team">
     <div id="booking-success">

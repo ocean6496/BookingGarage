@@ -347,8 +347,11 @@ Route::post('botman/chatBot', [
 	'uses' => 'Garage\ChatBotController@chatBot'
 ]);
 
+Route::get('error', function() {
+	return view('errors.error');
+})->name('errorPage');
 
 
 Route::get('/test', function() {
-	return view('login.loginAdmin');
+	return view('errors.error');
 });

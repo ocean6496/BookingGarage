@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Booking Garge</title>
+<title>@yield('title')</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Car Towing Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 

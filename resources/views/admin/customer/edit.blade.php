@@ -1,4 +1,7 @@
 @extends('templates.adminTLE.master')
+@section('title')
+    Edit Customer
+@endsection
 @section('content')
 <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">

@@ -1,4 +1,7 @@
 @extends('templates.admin.master')
+@section('title')
+    Edit Customer
+@endsection
 @section('content')
 <section id="main-content">
 	<section class="wrapper">
