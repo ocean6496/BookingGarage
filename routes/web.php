@@ -5,23 +5,48 @@
 Route::group(['namespace' => 'Auth'], function() {
 
 	Route::get('/login', [
-		'uses' => 'AuthController@getLogin',
-		'as' => 'getLogin'
+		'uses' => 'AuthController@getLoginCustomer',
+		'as' => 'getLoginCustomer'
 	]);
 
-	Route::get('/loginCustomer', [
-		'uses' => 'AuthController@getLoginCustomer',
-		'as' => 'loginCustomer'
+	Route::get('/login/garage', [
+		'uses' => 'AuthController@getLoginGarage',
+		'as' => 'getLoginGarage'
+	]);
+
+	Route::get('/login/admin', [
+		'uses' => 'AuthController@getLoginAdmin',
+		'as' => 'getLoginAdmin'
 	]);
 
 	Route::post('/login/{role_page_id}', [
-		'uses' => 'AuthController@postLogin',
-		'as' => 'postLogin'
+		'uses' => 'AuthController@postLoginCustomer',
+		'as' => 'loginCustomer'
 	]);
 
-	Route::get('/logout', [
-		'uses' => 'AuthController@logout',
-		'as' => 'logout'
+	Route::post('/login/garage/{role_page_id}', [
+		'uses' => 'AuthController@postLoginGarage',
+		'as' => 'loginGarage'
+	]);
+
+	Route::post('/login/admin/{role_page_id}', [
+		'uses' => 'AuthController@postLoginAdmin',
+		'as' => 'loginAdmin'
+	]);
+
+	Route::get('/logout/customer', [
+		'uses' => 'AuthController@logoutCustomer',
+		'as' => 'logoutCustomer'
+	]);
+
+	Route::get('/logout/garage', [
+		'uses' => 'AuthController@logoutGarage',
+		'as' => 'logoutGarage'
+	]);
+
+	Route::get('/logout/admin', [
+		'uses' => 'AuthController@logoutAdmin',
+		'as' => 'logoutAdmin'
 	]);
 
 	Route::get('/verify', [
@@ -192,7 +217,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 
 /*   --------- ROUTE FOR CUSTOMER ADMIN---------   */
 
-Route::group(['namespace' => 'Customer', 'prefix' => 'customer', 'middleware' => 'auth'], function() {
+Route::group(['namespace' => 'Customer', 'prefix' => 'customer', 'middleware' => 'auth:customer'], function() {
 	Route::get('/', [
 		'uses' => 'IndexController@index',
 		'as' => 'customer.index'
@@ -211,7 +236,7 @@ Route::group(['namespace' => 'Customer', 'prefix' => 'customer', 'middleware' =>
 
 /*   --------- ROUTE FOR GARAGE ADMIN ---------   */
 
-Route::group(['namespace' => 'GarageAdmin', 'prefix' => 'garage', 'middleware' => 'auth'], function() {
+Route::group(['namespace' => 'GarageAdmin', 'prefix' => 'garage', 'middleware' => 'auth:garage-admin'], function() {
 	Route::get('/', [
 		'uses' => 'IndexController@index',
 		'as' => 'garageAdmin.index'
@@ -325,5 +350,5 @@ Route::post('botman/chatBot', [
 
 
 Route::get('/test', function() {
-	return view('garage.success');
+	return view('login.loginAdmin');
 });

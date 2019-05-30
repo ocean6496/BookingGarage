@@ -9,51 +9,91 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
-    public function getLogin()
-    { 
-    	return view('login.login');
-    }
-
     public function getLoginCustomer()
     {
         return view('login.loginCustomer');
     }
 
-    public function postLogin(Request $request, $role_page_id)
+    public function getLoginGarage()
+    {
+        return view('login.loginGarage');
+    }
+
+    public function getLoginAdmin()
     {  
+        return view('login.loginAdmin');
+    }
+
+    public function postLoginCustomer(Request $request, $role_page_id)
+    {
+        $username = $request->username;
+        $password = $request->password;
+        $role_page_id = $role_page_id;
+
+        if (Auth::guard('customer')->attempt(['username' => $username, 'password' => $password, 'role_id' => 3 , 'active' => 1])) {
+            if ($role_page_id = 3) {
+                return redirect()->route('customer.index');
+            } else {
+                return redirect()->route('getLoginCustomer')->with('msg', 'Username or Password not correct!');
+            } 
+        } else {
+            return redirect()->route('getLoginCustomer')->with('msg', 'Username or Password not correct!');
+        }
+    }
+
+    public function postLoginGarage(Request $request, $role_page_id)
+    {
+        $username = $request->username;
+        $password = $request->password;
+        $role_page_id = $role_page_id;
+
+        if (Auth::guard('garage-admin')->attempt(['username' => $username, 'password' => $password, 'role_id' => 2 , 'active' => 1])) {
+            if ($role_page_id = 1) {
+                return redirect()->route('garageAdmin.index');
+            } else {
+                return redirect()->route('getLoginGarage')->with('msg', 'Username or Password not correct!');
+            }
+        } else {
+            return redirect()->route('getLoginGarage')->with('msg', 'Username or Password not correct!');
+        }
+    }
+
+    public function postLoginAdmin(Request $request, $role_page_id)
+    {   
     	$username = $request->username;
     	$password = $request->password;
         $role_page_id = $role_page_id;
 
-    	if (Auth::attempt(['username' => $username, 'password' => $password, 'active' => 1])) { 
-    		$role_id = Auth::user()->role_id;
-            if ($role_id == 1 && $role_page_id == 1) {              
-		        return redirect()->route('admin.index');
-            } elseif ($role_id == 2 && $role_page_id == 1) { 
-                return redirect()->route('garageAdmin.index');          
-            } elseif ($role_id == 3 && $role_page_id == 3) { 
-                return redirect()->route('customer.index');
-            } else { 
-                if ($role_page_id == 1) {
-                    return redirect()->route('getLogin')->with('msg', 'Username or Password not correct!');
-                } elseif ($role_page_id == 3) {
-                    return redirect()->route('loginCustomer')->with('msg', 'Username or Password not correct!');
-                }
+        if (Auth::guard('web')->attempt(['username' => $username, 'password' => $password, 'role_id' => 1 , 'active' => 1])) {
+            if ($role_page_id = 1) {
+                return redirect()->route('admin.index');
+            } else {
+                return redirect()->route('getLoginAdmin')->with('msg', 'Username or Password not correct!');
             }
-		} else { 
-			if ($role_page_id == 1) {
-                return redirect()->route('getLogin')->with('msg', 'Username or Password not correct!');
-            } elseif ($role_page_id == 3) {
-                return redirect()->route('loginCustomer')->with('msg', 'Username or Password not correct!');
-            }
-		}
+        } else {
+            return redirect()->route('getLoginAdmin')->with('msg', 'Username or Password not correct!');
+        }
     }
 
-    public function logout()
+    public function logoutCustomer()
     {
-    	Auth::logout();
+    	Auth::guard('customer')->logout();
 
-    	return redirect()->route('getLogin');
+    	return redirect()->route('getLoginCustomer');
+    }
+
+    public function logoutGarage()
+    {
+        Auth::guard('garage-admin')->logout();
+
+        return redirect()->route('getLoginGarage');
+    }
+
+    public function logoutAdmin()
+    {
+        Auth::guard('web')->logout();
+
+        return redirect()->route('getLoginAdmin');
     }
 
     public function verify(Request $request)

@@ -27,7 +27,7 @@
     <img src="https://cdn4.iconfinder.com/data/icons/miu/22/circle_close_delete_-128.png"></img>
   </span>
 
-  <form action="{{ route('postLogin', ['role_page_id' => 3]) }}" method="post">
+  <form action="{{ route('loginCustomer', ['role_page_id' => 3]) }}" method="post">
     {{ csrf_field() }}
     <input type="email" name="username" placeholder="E-mail">
     <input type="password" name="password" placeholder="Password">

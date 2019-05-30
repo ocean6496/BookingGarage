@@ -128,7 +128,7 @@
                   <a href="{{ route('admin.changePassword') }}" class="btn btn-default btn-flat"><i class=" fa fa-key"></i> Change Password</a>
                 </div>
                 <div class="pull-right">
-                  <a href="{{ route('logout') }}" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Sign Out</a>
+                  <a href="{{ route('logoutAdmin') }}" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Sign Out</a>
                 </div>
               </li>
             </ul>

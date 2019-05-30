@@ -46,6 +46,16 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+
+        'garage-admin' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+
+        'customer' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
     ],
 
     /*
