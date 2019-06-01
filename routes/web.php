@@ -347,6 +347,9 @@ Route::post('botman/chatBot', [
 	'uses' => 'Garage\ChatBotController@chatBot'
 ]);
 
+
+/*   --------- ROUTE FOR PAGE ERROR ---------   */
+
 Route::get('error', function() {
 	return view('errors.error');
 })->name('errorPage');

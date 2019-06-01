@@ -41,6 +41,7 @@ class BookingsTableSeeder extends Seeder
                     'time' => $faker->time,
                     'service_id' => $faker->randomElement($services),
                     'checkout' => rand(0,1),
+                    'status' => rand(0,1),
                 ]);
             }
         }

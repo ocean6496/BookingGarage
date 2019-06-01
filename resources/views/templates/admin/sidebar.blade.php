@@ -43,9 +43,9 @@
 
                 @if (Auth::user()->role_id == 3)
                     <li class="{{ route::currentRouteName() == 'admin.service' ? 'active' : '' }}" class="sub-menu">
-                        <a href="{{ route('admin.service') }}">
+                        <a href="{{ route('customer.index') }}">
                             <i class=" fa fa-first-order"></i>
-                            <span>Booking</span>
+                            <span>My Booking</span>
                         </a>
                     </li>
                 @endif

@@ -42,6 +42,7 @@
                           <tr>
                             <th>No</th>
                             <th>Customer Email</th>
+                            <th>Garage</th>
                             <th>Message</th>
                             <th>Start Rated</th>
                             <th>Function</th>
@@ -50,8 +51,9 @@
                         <tbody>
                           @foreach($feedbacks as $key => $feedback)
                           <tr>
-                            <td>{{ $key+1 }}</td>
+                            <td>{{ $feedback->id }}</td>
                             <td>{{ $feedback->email }}</td>
+                            <td>{{ $feedback->garage_name }}</td>
                             <td><span class="text-ellipsis">{{ $feedback->message }}</span></td>
                             <td>
                                 <div class='rating-stars'>

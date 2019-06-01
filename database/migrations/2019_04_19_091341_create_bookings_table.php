@@ -23,6 +23,7 @@ class CreateBookingsTable extends Migration
             $table->string('time');
             $table->integer('service_id');
             $table->integer('checkout');
+            $table->integer('status');
             $table->timestamps();
         });
     }

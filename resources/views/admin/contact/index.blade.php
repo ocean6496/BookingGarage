@@ -55,9 +55,9 @@
                                 <td>{{ $contact->email }}</td>
                                 <td>{{ $contact->content }}</td>
                                 <td>
-                                    <a href="{{ route('admin.contact.delete', ['id' => $contact->id]) }}" class="active" ui-toggle-class="">
-                                        <button class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>
-                                    </a>
+                                    <!-- <a href="{{-- route('admin.contact.delete', ['id' => $contact->id]) --}}" class="active" ui-toggle-class=""> -->
+                                        <button onclick="del({{ $contact->id }})" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>
+                                    <!-- </a> -->
                                 </td>
                             </tr>
                             @endforeach
@@ -77,5 +77,14 @@
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+<script type="text/javascript">
+    function del(id) {
+        var result = confirm('Are you want delete?');
+        if (result) {
+            
+            window.location = 'http://127.0.0.1:8000/admin/contact/delete/' + id 
+        }
+    }
+</script>
 @endsection
 
