@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\UserRepository;
 use Auth;
+use App\Models\Garage;
 use App\Models\User;
+use App\Models\Feedback;
+use App\Models\Contact;
 use App\Models\Notification;
 
 class IndexController extends Controller
@@ -18,9 +21,12 @@ class IndexController extends Controller
 
     public function index() 
     { 
-    	// dd(Auth::user());
-    	
-    	return view('admin.index');
+        $amount_garage = Garage::count();
+    	$amount_customer = User::where('role_id', 3)->count();
+        $amount_feedback = Feedback::count();
+        $amount_contact = Contact::count();
+   
+    	return view('admin.index', compact('amount_garage', 'amount_customer', 'amount_feedback', 'amount_contact'));
     }
 
     public function getProfile()

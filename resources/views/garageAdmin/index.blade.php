@@ -11,12 +11,12 @@
 			<div class="col-md-3 market-update-gd">
 				<div class="market-update-block clr-block-2">
 					<div class="col-md-4 market-update-right">
-						<i class="fa fa-eye"> </i>
+						<i class="fa fa-support"> </i>
 					</div>
 					 <div class="col-md-8 market-update-left">
-					 <h4>Visitors</h4>
-					<h3>13,500</h3>
-					<p>Other hand, we denounce</p>
+					 <h4>Services</h4>
+					<h3>{{ $amount_service }}</h3>
+					<!-- <p>Other hand, we denounce</p> -->
 				  </div>
 				  <div class="clearfix"> </div>
 				</div>
@@ -24,12 +24,12 @@
 			<div class="col-md-3 market-update-gd">
 				<div class="market-update-block clr-block-1">
 					<div class="col-md-4 market-update-right">
-						<i class="fa fa-users" ></i>
+						<i class="fa fa-phone-square" ></i>
 					</div>
 					<div class="col-md-8 market-update-left">
-					<h4>Users</h4>
-						<h3>1,250</h3>
-						<p>Other hand, we denounce</p>
+					<h4>Bookings</h4>
+						<h3>{{ $amount_booking }}</h3>
+						<!-- <p>Other hand, we denounce</p> -->
 					</div>
 				  <div class="clearfix"> </div>
 				</div>
@@ -37,12 +37,12 @@
 			<div class="col-md-3 market-update-gd">
 				<div class="market-update-block clr-block-3">
 					<div class="col-md-4 market-update-right">
-						<i class="fa fa-usd"></i>
+						<i class="fa fa-user-plus"></i>
 					</div>
 					<div class="col-md-8 market-update-left">
-						<h4>Sales</h4>
-						<h3>1,500</h3>
-						<p>Other hand, we denounce</p>
+						<h4>Customers</h4>
+						<h3>{{ $amount_customer }}</h3>
+						<!-- <p>Other hand, we denounce</p> -->
 					</div>
 				  <div class="clearfix"> </div>
 				</div>
@@ -50,12 +50,12 @@
 			<div class="col-md-3 market-update-gd">
 				<div class="market-update-block clr-block-4">
 					<div class="col-md-4 market-update-right">
-						<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+						<i class="fa fa-reply-all" aria-hidden="true"></i>
 					</div>
 					<div class="col-md-8 market-update-left">
-						<h4>Orders</h4>
-						<h3>1,500</h3>
-						<p>Other hand, we denounce</p>
+						<h4>Feedbacks</h4>
+						<h3>{{ $amount_feedback }}</h3>
+						<!-- <p>Other hand, we denounce</p> -->
 					</div>
 				  <div class="clearfix"> </div>
 				</div>
@@ -377,4 +377,9 @@
 					<div class="clearfix"> </div>
 				</div>
 </section>
+<style type="text/css">
+	.clr-block-4 {
+		background: #805c5c !important;
+	}
+</style>
 @endsection

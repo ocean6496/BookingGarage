@@ -34,32 +34,27 @@ class ChatBotController extends Controller
 
 		
 		$botman->hears('bmw', function (BotMan $bot) {
-		// Create attachment
-		$attachment = new Image('https://s.aolcdn.com/dims-global/dims3/GLOB/legacy_thumbnail/640x400/quality/80/https://s.aolcdn.com/commerce/autodata/images/USC80BMC111A021001.jpg', [
-		    'custom_payload' => true,
-		]);
+			$attachment = new Image('https://s.aolcdn.com/dims-global/dims3/GLOB/legacy_thumbnail/640x400/quality/80/https://s.aolcdn.com/commerce/autodata/images/USC80BMC111A021001.jpg', [
+			    'custom_payload' => true,
+			]);
 
-		// Build message object
-		$message = OutgoingMessage::create('This is your car')
+			$message = OutgoingMessage::create('This is your car')
 		            ->withAttachment($attachment);
 
-		// Reply message object
 		    $bot->reply($message);
 		});
 
 		$botman->hears('loca', function(BotMan $bot) {
 			// Create attachment
-$attachment = new Video('https://zingmp3.vn/71a41afe-2359-4e65-9c63-4d1a295671b8', [
-    'custom_payload' => true,
-]);
+			$attachment = new Location(61.766130, -6.822510);
 
-// Build message object
-$message = OutgoingMessage::create('This is my text')
-            ->withAttachment($attachment);
+			// Build message object
+			$message = OutgoingMessage::create('This is my text')
+			            ->withAttachment($attachment);
 
-// Reply message object
-            $bot->typesAndWaits(2);
-$bot->reply($message);
+			// Reply message object
+			            $bot->typesAndWaits(2);
+			$bot->reply($message);
 		});
 
 		$botman->fallback(function($bot) {

@@ -38,11 +38,11 @@
 					</div>
 					<div class="test">
 						<p>Email</p>
-						<input type="text" name="email" class="input-tag"><br>
+						<input type="text" name="email" class="input-tag" required=""><br>
 					</div>
 					<div class="test">
 						<p>Password</p>
-						<input type="password" name="password" class="input-tag" autocomplete="new-password"><br>
+						<input type="password" name="password" class="input-tag" autocomplete="new-password" required=""><br>
 					</div>
 					    <input type="submit" name="" value="next" class="submit">
 				</form>

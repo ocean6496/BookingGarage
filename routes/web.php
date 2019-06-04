@@ -356,5 +356,5 @@ Route::get('error', function() {
 
 
 Route::get('/test', function() {
-	return view('errors.error');
+	return view('mail.verifyCustomer');
 });

@@ -87,15 +87,16 @@ class BookingController extends Controller
 
     public function booking(Request $request, $car_id, $car_model_id)
     {
-        $username = $request->username;
-        $fullname = $request->fullname;
-        $phone = $request->phone;
-        $address = $request->address;
         $email = $request->email;
         $password = bcrypt($request->password);
 
-        $check_has_user = User::where('email', $email)->first(); 
+        $check_has_user = User::where('email', $email)->first();  
         if ($check_has_user == null) {
+            $username = $request->username;
+            $fullname = $request->fullname;
+            $phone = $request->phone;
+            $address = $request->address;
+
             User::insert([
                 'username' => $username,
                 'password' => $password,
@@ -131,14 +132,22 @@ class BookingController extends Controller
                     'date' => $request->session()->get('dateTime')[0],
                     'time' => $request->session()->get('dateTime')[1],
                     'service_id' => $value,
-                    'checkout' => 0
+                    'checkout' => 0,
+                    'status' => 1
                 ]);
             }
 
+            //send mail to new customer
+            $garage_name = Garage::find($request->session()->get('garage')); 
+            $customer_name = Customer::where('user_id', $user_id)->first()->fullname; 
             $date = array(
                         'email' => $email,
                         'remember_token' => $user->remember_token,
-                        'user_id' => $user->id
+                        'user_id' => $user->id,
+                        'date' => $request->session()->get('dateTime')[0],
+                        'time' => $request->session()->get('dateTime')[1],
+                        'garage' => $garage_name->name,
+                        'customer_name' => $customer_name
                     );
 
             Mail::to('ocean06041996@gmail.com')->send(new VerifyCustomer($date));
@@ -147,7 +156,25 @@ class BookingController extends Controller
 
             return redirect()->route('garage.payment', ['access_token' => $access_token, 'id' => $user_id]);
         } else { 
-            // return redirect()->route('garage.getUser', ['car_id' => $car_id, 'car_model_id' => $car_model_id])->with('msg', 'User was has in system');
+            $arrayServiceId = $request->session()->get('service');
+
+            foreach ($arrayServiceId as $value) {
+                Booking::insert([
+                    'user_id' => $check_has_user->id,
+                    'car_id' => $car_id,
+                    'car_model_id' => $car_model_id,
+                    'garage_id' => $request->session()->get('garage'),
+                    'date' => $request->session()->get('dateTime')[0],
+                    'time' => $request->session()->get('dateTime')[1],
+                    'service_id' => $value,
+                    'checkout' => 0,
+                    'status' => 1
+                ]);
+            }
+
+            $access_token = $check_has_user->remember_token;
+
+            return redirect()->route('garage.payment', ['access_token' => $access_token, 'id' => $check_has_user->id]);
         }       
     }
 

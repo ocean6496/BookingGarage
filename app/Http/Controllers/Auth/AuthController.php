@@ -101,7 +101,7 @@ class AuthController extends Controller
         $verify = User::where('remember_token', $request->access_token)->update(['active' => 1]);
 
         if ($verify) {
-            return redirect()->route('loginCustomer');
+            return redirect()->route('getLoginCustomer');
         } else {
             return redirect()->route('errors.404');
         }
