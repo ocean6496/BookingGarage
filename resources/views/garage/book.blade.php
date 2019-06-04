@@ -1,4 +1,7 @@
 @extends('templates.garage.master')
+@section('title')
+	Choose Car
+@endsection
 @section('content')
 <div class="team" id ="team">
 	<div class="container">

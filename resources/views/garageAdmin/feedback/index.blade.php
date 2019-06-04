@@ -1,4 +1,7 @@
 @extends('templates.admin.master')
+@section('title')
+    Management Feedback
+@endsection
 @section('content')
 <!--main content start-->
 <section id="main-content">
@@ -6,7 +9,7 @@
 		<div class="table-agile-info">
   <div class="panel panel-default">
     <div class="panel-heading">
-        GARAGE CUSTOMER
+        Feedback Management
     </div>
     <div class="row w3-res-tb">
       <div class="col-sm-2 m-b-xs">             

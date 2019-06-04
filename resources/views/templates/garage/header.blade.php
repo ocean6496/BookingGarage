@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Booking Garge</title>
+<title>@yield('title')</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Car Towing Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -23,6 +23,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="//fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
 <!-- /js files -->
+<!-- js chatbox -->
+	<script>
+        var botmanWidget = {
+            // frameEndpoint: '/chat.html',
+            introMessage: 'Hi, Welcome to visit our website!',
+            chatServer : 'chatBot', 
+            title: 'Chatbot', 
+            mainColor: '#456765',
+            bubbleBackground: '#ff76f4',
+            aboutText: '',
+            bubbleAvatarUrl: 'http://127.0.0.1:8000/templates/garage/images/chat.png',
+        }; 
+    </script>
+    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+<!-- end js chatbox -->
 </head>
 <body>
 <div class="main-top" id="home">

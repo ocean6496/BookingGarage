@@ -6,7 +6,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
 <head>
-<title>Admin</title>
+<title>@yield('title')</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -169,7 +169,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <ul class="dropdown-menu extended logout">
                 <li><a href="{{ route('admin.profile') }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
                 <li><a href="{{ route('admin.changePassword') }}"><i class="fa fa-key"></i> Change Password</a></li>
-                <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> Log Out</a></li>
+                @if (Auth::user()->role_id == 2)
+                <li><a href="{{ route('logoutGarage') }}"><i class="fa fa-sign-out"></i> Log Out</a></li>
+                @elseif (Auth::user()->role_id == 3)
+                <li><a href="{{ route('logoutCustomer') }}"><i class="fa fa-sign-out"></i> Log Out</a></li>
+                @endif
             </ul>
         </li>
         <!-- user login dropdown end -->

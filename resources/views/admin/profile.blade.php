@@ -1,66 +1,61 @@
-@extends('templates.admin.master')
+@extends('templates.adminTLE.master')
 @section('content')
-<!--main content start-->
-<section id="main-content">
-    <section class="wrapper">
-        <div class="form-w3layouts">
-            <!-- page start-->
-            <!-- page start-->
-            <div class="row">
-                <div class="col-lg-12">
-                    <section class="panel">
-                        <header class="panel-heading">
-                            Profile
-                        </header>
-                        <div class="panel-body">
-                            <div class="position-center">
-                                <form class="form-horizontal" role="form">
-                                    @if($user->role_id == 1)
-                                    <div class="form-group">
-                                        <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">Role:</label>
-                                        <div class="col-lg-10">
-                                            <p class="help-block">Administration</p>
-                                        </div>
-                                    </div>
-                                    @endif
-                                    <div class="form-group">
-                                        <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">Name:</label>
-                                        <div class="col-lg-10">
-                                            <p class="help-block">{{ $user->username }}</p>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputPassword1" class="col-lg-2 col-sm-2 control-label">Email</label>
-                                        <div class="col-lg-10">
-                                            <p class="help-block">{{ $user->email }}</p>
-                                        </div>
-                                    </div>
-                                    @if($user->role_id != 1)
-                                    <div class="form-group">
-                                        <label for="inputPassword1" class="col-lg-2 col-sm-2 control-label">Phone</label>
-                                        <div class="col-lg-10">
-                                            <p class="help-block">{{ $user->phone }}</p>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputPassword1" class="col-lg-2 col-sm-2 control-label">Address</label>
-                                        <div class="col-lg-10">
-                                            <p class="help-block">{{ $user->address }}</p>
-                                        </div>
-                                    </div>
-                                    @endif
-                                    <div class="form-group">
-                                        <div class="col-lg-offset-2 col-lg-10">
-                                            <button type="submit" class="btn btn-success">Edit Profile</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </div>    
+<!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Edit user
+            <!-- <small>Control panel</small> -->
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-street-view"></i> User</a></li>
+            <li class="active">Edit</li>
+        </ol>
     </section>
 
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+        <!-- right column -->
+            <div class="col-md-12">
+            <!-- Horizontal Form -->
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <!-- <h3 class="box-title">Horizontal Form</h3> -->
+                    </div>
+                    <!-- /.box-header -->
+                    <!-- form start -->
+                    <form class="form-horizontal" method="post" action="">
+                        {{ csrf_field() }}
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Name</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" name="fullname" value="{{ $user->username }}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-3 control-label">Email</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" name="address" value="{{ $user->email }}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-5 control-label"></label>
+                                <div class="col-sm-4">
+                                    <input type="submit" class="btn btn-info" value="Submit">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
 @endsection

@@ -56,15 +56,15 @@ class CarModelsTableSeeder extends Seeder
             if ($key == 2) {
                 Car_model::insert([
                     [
-                        'name' => 'Cougar',
+                        'name' => 'Morning',
                         'car_id' => $car->id,
                     ],
                     [
-                        'name' => 'Capri',
+                        'name' => 'Cerato',
                         'car_id' => $car->id,
                     ],
                     [
-                        'name' => 'Fusion',
+                        'name' => 'Tucson',
                         'car_id' => $car->id,
                     ],
                 ]);

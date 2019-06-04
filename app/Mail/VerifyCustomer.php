@@ -32,8 +32,13 @@ class VerifyCustomer extends Mailable
     {  
         $user_id = $this->user['user_id'];
         $remember_token = $this->user['remember_token'];
+        $date = $this->user['date'];
+        $time = $this->user['time'];
+        $garage = $this->user['garage'];
+        $customer_name = $this->user['customer_name'];
         $domain = 'http://127.0.0.1:8000/verify?access_token='.$remember_token.'&id='.$user_id;
 
-        return $this->subject('Notification Student Submit Exam')->view('mail.verifyCustomer', compact('domain'));
+        return $this->subject('Booking Garage Verify Account')
+                    ->view('mail.verifyCustomer', compact('domain', 'date', 'time', 'garage', 'customer_name'));
     }
 }

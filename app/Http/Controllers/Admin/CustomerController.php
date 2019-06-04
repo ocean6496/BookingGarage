@@ -24,7 +24,7 @@ class CustomerController extends AppBaseController
 
     public function index()
     { 
-        $customers = Customer::orderBy('id', 'DESC')->paginate(5);
+        $customers = Customer::orderBy('id', 'DESC')->paginate(7);
 
         return view('admin.customer.index', compact('customers'));
     }

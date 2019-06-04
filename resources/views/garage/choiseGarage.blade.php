@@ -1,4 +1,7 @@
 @extends('templates.garage.master')
+@section('title')
+	Choose Garage
+@endsection
 @section('content')
 <!-- container -->
 <div class="newsletter" id="contact">

@@ -1,52 +1,61 @@
-@extends('templates.admin.master')
+@extends('templates.adminTLE.master')
 @section('content')
-<section id="main-content">
-	<section class="wrapper">
-	<div class="form-w3layouts">
-        <!-- page start-->
-        <!-- page start-->
+<!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Change Password
+            <!-- <small>Control panel</small> -->
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> User</a></li>
+            <li class="active">Change Password</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
         <div class="row">
-	        <div class="col-lg-12">
-		        <section class="panel">
-		            <header class="panel-heading">
-		                Change Password
-		            </header>
-		            <div class="panel-body">
-		                <form action="{{ route('admin.changePassword') }}" class="form-horizontal bucket-form" method="post" id="form">
-		                	{{ csrf_field() }}
-		                    <div class="form-group">
-		                        <label class="col-sm-3 control-label">New Password</label>
-		                        <div class="col-sm-6">
-		                            <input type="password" class="form-control" name="password" required="" autocomplete="off">
-		                        </div>
-		                    </div>
-		                    <div class="form-group">
-		                        <label class="col-sm-3 control-label">New Password Confirmation</label>
-		                        <div class="col-sm-6">
-		                            <input type="password" class="form-control" name="confirmPassword" required="">
-		                        </div>
-		                    </div>
-		                    <div class="form-group">
-		                    	<label class="col-sm-3 control-label"></label>
-		                        <div class="col-sm-6">
-		                        	@if(Session::has('msg'))
-										<h4 style="color: red">{{ Session::get('msg') }}</h4>
-		                        	@endif
-		                        </div>
-		                    </div>
-		                    <div class="form-group">
-		                    	<label class="col-sm-5 control-label"></label>
-		                        <div class="col-sm-2">
-		                            <input type="submit" class="btn btn-info">
-		                        </div>
-		                    </div>
-		                </form>
-		            </div>
-		        </section>
-	        </div>
-        </div>
-        <!-- page end-->
-    </div>
-	</section>
-</section>
+        <!-- right column -->
+        	<div class="col-md-12">
+          	<!-- Horizontal Form -->
+          		<div class="box box-info">
+           	  		<div class="box-header with-border">
+              			<!-- <h3 class="box-title">Horizontal Form</h3> -->
+            		</div>
+            		<!-- /.box-header -->
+            		<!-- form start -->
+           			<form class="form-horizontal" method="post" action="{{ route('admin.contact.add') }}">
+           				{{ csrf_field() }}
+              			<div class="box-body">
+	                		<div class="form-group">
+	              				<label for="inputEmail3" class="col-sm-3 control-label">New Password</label>
+	                  			<div class="col-sm-6">
+	                    			<input type="password" class="form-control" name="password" placeholder="Fill the Name" required="">
+	                  			</div>
+	                		</div>
+	                		<div class="form-group">
+	                  			<label for="inputPassword3" class="col-sm-3 control-label">New Password Confirmation</label>
+	                  			<div class="col-sm-6">
+	                    			<input type="password" class="form-control" name="confirmPassword" placeholder="Fill the Email" required="">
+	                  			</div>
+	                		</div>
+	                		<div class="form-group">
+	                			<label for="inputPassword3" class="col-sm-5 control-label"></label>
+	                  			<div class="col-sm-4">
+	                    			<input type="submit" class="btn btn-info" value="Submit">
+	                  			</div>
+	                		</div>
+              			</div>
+            		</form>
+          		</div>
+        	</div>
+        	<!--/.col (right) -->
+      	</div>
+      	<!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
 @endsection

@@ -4,72 +4,19 @@
         <!-- sidebar menu start-->
         <div class="leftside-navigation">
             <ul class="sidebar-menu" id="nav-accordion">
-                @if (Auth::user()->role_id == 1)
-                    <li>
-                        <a class="{{ route::currentRouteName() == 'admin.index' ? 'active' : '' }}" href="{{ route('admin.index') }}">
-                            <i class="fa fa-dashboard"></i>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-                @endif
-                
-                @if (Auth::user()->role_id == 1)
+               
+                @if (Auth::user()->role_id == 2)
                 <li class="sub-menu">
-                    <a class="{{ route::currentRouteName() == 'admin.garage' ? 'active' : '' }}" href="{{ route('admin.garage') }}">
-                        <i class="fa fa-book"></i>
-                        <span>Garage</span>
-                    </a>
-                </li>
-                @endif
-
-                @if (Auth::user()->role_id == 1)
-                <li class="sub-menu">
-                    <a class="{{ route::currentRouteName() == 'admin.customer' ? 'active' : '' }}" href="{{ route('admin.customer') }}">
-                        <i class=" fa fa-street-view"></i>
-                        <span>Customer</span>
-                    </a>
-                </li>
-                @endif
-
-                @if (Auth::user()->role_id == 1)
-                <li class="sub-menu">
-                    <a class="{{ route::currentRouteName() == 'admin.booking' ? 'active' : '' }}" href="{{ route('admin.booking') }}">
-                        <i class=" fa fa-first-order"></i>
-                        <span>Booking</span>
-                    </a>
-                </li>
-                @endif
-
-                @if (Auth::user()->role_id == 1)
-                <li class="sub-menu">
-                    <a class="{{ route::currentRouteName() == 'admin.service' ? 'active' : '' }}" href="{{ route('admin.service') }}">
+                    <a class="{{ route::currentRouteName() == 'garageAdmin.service' ? 'active' : '' }}" href="{{ route('garageAdmin.service') }}">
                         <i class=" fa fa-bar-chart-o"></i>
                         <span>Service</span>
                     </a>
                 </li>
                 @endif
 
-                @if (Auth::user()->role_id == 1)
-                <li class="sub-menu">
-                    <a class="{{ route::currentRouteName() == 'admin.contact' ? 'active' : '' }}" href="{{ route('admin.contact') }}">
-                        <i class=" fa fa-phone-square"></i>
-                        <span>Contact</span>
-                    </a>
-                </li>
-                @endif
-
-                @if (Auth::user()->role_id == 1)
-                    <li class="sub-menu">
-                        <a class="{{ route::currentRouteName() == 'admin.feedback' ? 'active' : '' }}" href="{{ route('admin.feedback') }}">
-                            <i class=" fa fa-reply-all"></i>
-                            <span>Feedback</span>
-                        </a>
-                    </li>
-                @endif
-
                 @if (Auth::user()->role_id == 2)
                     <li class="sub-menu">
-                        <a class="{{ route::currentRouteName() == 'admin.service' ? 'active' : '' }}" href="{{ route('garageAdmin.booking') }}">
+                        <a class="{{ route::currentRouteName() == 'garageAdmin.booking' ? 'active' : '' }}" href="{{ route('garageAdmin.booking') }}">
                             <i class=" fa fa-first-order"></i>
                             <span>Booking</span>
                         </a>
@@ -96,9 +43,9 @@
 
                 @if (Auth::user()->role_id == 3)
                     <li class="{{ route::currentRouteName() == 'admin.service' ? 'active' : '' }}" class="sub-menu">
-                        <a href="{{ route('admin.service') }}">
+                        <a href="{{ route('customer.index') }}">
                             <i class=" fa fa-first-order"></i>
-                            <span>Booking</span>
+                            <span>My Booking</span>
                         </a>
                     </li>
                 @endif
