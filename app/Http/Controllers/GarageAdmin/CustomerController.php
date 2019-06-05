@@ -16,13 +16,15 @@ class CustomerController extends Controller
     public function getCustomer()
     {
     	$user = Auth::user(); 
-    	$garage = Garage::where('user_id', $user->id)->first();
+    	$garage = Garage::where('user_id', $user->id)->first(); 
     	$customers = DB::table('customers')
-    					->join('garage_customers', 'garage_customers.user_id', 'customers.user_id')
+    					// ->join('garage_customers', 'garage_customers.user_id', 'customers.user_id')
+                        ->join('bookings', 'bookings.user_id', 'customers.user_id')
     					->select('customers.*')
-    					->where('garage_id', $garage->id)
+    					->where('bookings.garage_id', $garage->id)
     					->orderBy('id', 'desc')
-    					->get();
+                        ->distinct('customers.id')
+    					->get('customers.id');
     		// dd($customers);
 
     	return view('garageAdmin.customer.index', compact('customers'));
