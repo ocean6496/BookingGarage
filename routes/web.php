@@ -272,9 +272,36 @@ Route::group(['namespace' => 'GarageAdmin', 'prefix' => 'garage', 'middleware' =
 		'as' => 'garageAdmin.changePassword'
 	]);
 
+	/*     ===== Route for customer =====     */
+
 	Route::get('/customer', [
 		'uses' => 'CustomerController@getCustomer',
 		'as' => 'garageAdmin.customer'
+	]);
+
+	Route::get('/customer/add', [
+		'uses' => 'CustomerController@getAdd',
+		'as' => 'garageAdmin.customer.add'
+	]);
+
+	Route::post('/customer/add', [
+		'uses' => 'CustomerController@postAdd',
+		'as' => 'garageAdmin.customer.add'
+	]);
+
+	Route::get('/customer/edit/{id}', [
+		'uses' => 'CustomerController@getEdit',
+		'as' => 'garageAdmin.customer.edit'
+	]);
+
+	Route::post('/customer/edit/{id}', [
+		'uses' => 'CustomerController@postEdit',
+		'as' => 'garageAdmin.customer.edit'
+	]);
+
+	Route::get('/customer/delete/{id}', [
+		'uses' => 'CustomerController@delete',
+		'as' => 'garageAdmin.customer.delete'
 	]);
 
 	Route::get('/booking', [

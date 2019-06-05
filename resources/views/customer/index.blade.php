@@ -31,10 +31,11 @@
       <table class="table table-striped b-t b-light">
         <thead>
           <tr>
-            <th>ID</th>
+            <!-- <th>ID</th> -->
             <th>Garage</th>
             <th>Car</th>
             <th>Car Model</th>
+            <th>Service</th>
             <th>Date</th>
             <th>Time</th>
             <th>Status</th>
@@ -44,10 +45,11 @@
         <tbody>
             @foreach($bookings->reverse() as $key => $booking)
             <tr>
-                <td>{{ $key+1 }}</td>
+                <!-- <td>{{ $key+1 }}</td> -->
                 <td>{{ $booking->garage_name }}</td>
                 <td>{{ $booking->car_name }}</td>
                 <td>{{ $booking->car_model_name }}</td>
+                <td>{{ $booking->service_name }}</td>
                 <td>{{ $booking->date }}</td>
                 <td>{{ $booking->time }}</td>
                 @if ($booking->checkout == 0)

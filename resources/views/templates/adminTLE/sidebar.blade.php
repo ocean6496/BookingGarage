@@ -49,7 +49,7 @@
           <a href="{{ route('admin.contact') }}">
             <i class="fa fa-phone-square"></i> <span>Contact</span>
             <span class="pull-right-container">
-              <span class="label label-primary pull-right">4</span>
+              <!-- <span class="label label-primary pull-right">4</span> -->
             </span>
           </a>
         </li>

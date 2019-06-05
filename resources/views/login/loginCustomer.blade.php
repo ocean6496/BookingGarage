@@ -29,7 +29,7 @@
 
   <form action="{{ route('loginCustomer', ['role_page_id' => 3]) }}" method="post">
     {{ csrf_field() }}
-    <input type="email" name="username" placeholder="E-mail">
+    <input type="text" name="username" placeholder="E-mail">
     <input type="password" name="password" placeholder="Password">
     <input type="submit" value="Login">
     <!-- <a href="#">Log in</a> -->

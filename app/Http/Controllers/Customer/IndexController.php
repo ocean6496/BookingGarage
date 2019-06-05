@@ -11,6 +11,7 @@ use App\Models\Booking;
 use App\Models\User;
 use App\Models\Car;
 use App\Models\Car_model;
+use App\Models\Service;
 use App\Models\Notification;
 use DB;
 use Auth;
@@ -25,7 +26,8 @@ class IndexController extends Controller
             ->join('garages', 'garages.id', '=', 'bookings.garage_id')
             ->join('cars', 'cars.id', '=', 'bookings.car_id')
             ->join('car_models', 'car_models.id', '=', 'bookings.car_model_id')
-            ->select('bookings.*', 'users.username as user_name', 'garages.name as garage_name', 'cars.name as car_name', 'car_models.name as car_model_name')
+            ->join('services', 'services.id', '=', 'bookings.service_id')
+            ->select('bookings.*', 'users.username as user_name', 'garages.name as garage_name', 'cars.name as car_name', 'car_models.name as car_model_name', 'services.name as service_name')
             ->where('bookings.user_id', $customer_id)
             ->orderBy('id', 'asc')
             ->get();

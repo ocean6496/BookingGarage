@@ -20,7 +20,7 @@
           <option value="3">Export</option>
         </select>
         <button class="btn btn-sm btn-default">Apply</button>  -->               
-        <a href="{{ route('admin.service.add') }}"><button class="btn btn-success"><i class="icon-plus"></i> Add</button></a>
+        <a href="{{ route('garageAdmin.customer.add') }}"><button class="btn btn-success"><i class="icon-plus"></i> Add</button></a>
       </div>
       <div class="col-sm-7">
         @if (Session::has('msg'))
@@ -28,12 +28,12 @@
         @endif
       </div>
       <div class="col-sm-3">
-        <div class="input-group">
+        <!-- <div class="input-group">
           <input type="text" class="input-sm form-control" placeholder="Search">
           <span class="input-group-btn">
             <button class="btn btn-sm btn-default" type="button">Search</button>
           </span>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="table-responsive">

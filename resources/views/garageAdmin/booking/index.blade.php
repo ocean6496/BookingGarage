@@ -20,17 +20,17 @@
           <option value="3">Export</option>
         </select>
         <button class="btn btn-sm btn-default">Apply</button>  -->               
-        <a href=""><button class="btn btn-success"><i class="icon-plus"></i> Add</button></a>
+        <a href="#"><button class="btn btn-success"><i class="icon-plus"></i> Add</button></a>
       </div>
       <div class="col-sm-4">
       </div>
       <div class="col-sm-3">
-        <div class="input-group">
+        <!-- <div class="input-group">
           <input type="text" class="input-sm form-control" placeholder="Search">
           <span class="input-group-btn">
             <button class="btn btn-sm btn-default" type="button">Search</button>
           </span>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="table-responsive">
@@ -42,6 +42,7 @@
             <th>Garage</th>
             <th>Car</th>
             <th>Car Model</th>
+            <th>Service</th>
             <th>Date</th>
             <th>Time</th>
             <th>Status</th>
@@ -57,6 +58,7 @@
                 <td>{{ $booking->garage_name }}</td>
                 <td>{{ $booking->car_name }}</td>
                 <td>{{ $booking->car_model_name }}</td>
+                <td>{{ $booking->service_name }}</td>
                 <td>{{ $booking->date }}</td>
                 <td>{{ $booking->time }}</td>
                 @if ($booking->checkout == 0)
