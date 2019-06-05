@@ -167,12 +167,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu extended logout">
-                <li><a href="{{ route('admin.profile') }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                <li><a href="{{ route('admin.changePassword') }}"><i class="fa fa-key"></i> Change Password</a></li>
                 @if (Auth::user()->role_id == 2)
-                <li><a href="{{ route('logoutGarage') }}"><i class="fa fa-sign-out"></i> Log Out</a></li>
+                    <li><a href="{{ route('garageAdmin.profile') }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                    <li><a href="{{ route('garageAdmin.changePassword') }}"><i class="fa fa-key"></i> Change Password</a></li>
                 @elseif (Auth::user()->role_id == 3)
-                <li><a href="{{ route('logoutCustomer') }}"><i class="fa fa-sign-out"></i> Log Out</a></li>
+                    <li><a href="{{ route('customer.profile') }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                    <li><a href="{{ route('customer.changePassword') }}"><i class="fa fa-key"></i> Change Password</a></li>
+                @endif
+
+                @if (Auth::user()->role_id == 2)
+                    <li><a href="{{ route('logoutGarage') }}"><i class="fa fa-sign-out"></i> Log Out</a></li>
+                @elseif (Auth::user()->role_id == 3)
+                    <li><a href="{{ route('logoutCustomer') }}"><i class="fa fa-sign-out"></i> Log Out</a></li>
                 @endif
             </ul>
         </li>

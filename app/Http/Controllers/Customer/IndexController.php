@@ -4,12 +4,14 @@ namespace App\Http\Controllers\Customer;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Customer;
 use App\Models\Feedback;
 use App\Models\Garage;
 use App\Models\Booking;
 use App\Models\User;
 use App\Models\Car;
 use App\Models\Car_model;
+use App\Models\Notification;
 use DB;
 use Auth;
 
@@ -29,6 +31,44 @@ class IndexController extends Controller
             ->get();
 // dd($bookings);
     	return view('customer.index', compact('bookings'));
+    }
+
+    public function getProfile()
+    {
+        $user = DB::table('customers')
+                    ->join('users', 'users.id', '=', 'customers.user_id')
+                    ->select('customers.*', 'users.email')
+                    ->where('user_id', Auth::user()->id)->first(); 
+
+        return view('customer.profile', compact('user'));
+    }
+
+    public function changePassword()
+    {
+        return view('customer.changePass');
+    }
+
+    public function getChangePassword(Request $request)
+    { 
+        $password = $request->password;
+        $confirmPassword = $request->confirmPassword;
+
+        if ($password === $confirmPassword) {
+            $user = Auth::user(); 
+            $updatePass = User::where('id', $user->id)->update(['password' => bcrypt($confirmPassword)]);
+
+            if ($updatePass) {
+                Notification::insert([
+                    'user_id' => $user->id,
+                    'message' => 'Change password success',
+                    'is_read' => 0
+                ]);
+
+                return redirect()->route('customer.changePassword')->with('msg', 'Change Password Success!');
+            }
+        } else {
+            return redirect()->route('customer.changePassword')->with('msg', 'Password not match!');
+        }
     }
 
     public function getFeedback()

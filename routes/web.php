@@ -223,6 +223,21 @@ Route::group(['namespace' => 'Customer', 'prefix' => 'customer', 'middleware' =>
 		'as' => 'customer.index'
 	]);
 
+	Route::get('/profile', [
+		'uses' => 'IndexController@getProfile', 
+		'as' => 'customer.profile'
+	]);
+
+	Route::get('/change-password', [
+		'uses' => 'IndexController@changePassword',
+		'as' => 'customer.changePassword'
+	]);
+
+	Route::post('/change-password', [
+		'uses' => 'IndexController@getChangePassword',
+		'as' => 'customer.changePassword'
+	]);
+
 	Route::get('/feedback', [
 		'uses' => 'IndexController@getFeedback',
 		'as' => 'customer.feedback'
@@ -240,6 +255,21 @@ Route::group(['namespace' => 'GarageAdmin', 'prefix' => 'garage', 'middleware' =
 	Route::get('/', [
 		'uses' => 'IndexController@index',
 		'as' => 'garageAdmin.index'
+	]);
+
+	Route::get('/profile', [
+		'uses' => 'IndexController@getProfile', 
+		'as' => 'garageAdmin.profile'
+	]);
+
+	Route::get('/change-password', [
+		'uses' => 'IndexController@changePassword',
+		'as' => 'garageAdmin.changePassword'
+	]);
+
+	Route::post('/change-password', [
+		'uses' => 'IndexController@getChangePassword',
+		'as' => 'garageAdmin.changePassword'
 	]);
 
 	Route::get('/customer', [
