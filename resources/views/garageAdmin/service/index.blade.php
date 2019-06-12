@@ -20,7 +20,7 @@
           <option value="3">Export</option>
         </select>
         <button class="btn btn-sm btn-default">Apply</button>  -->               
-        <a href="{{ route('garageAdmin.service.add') }}"><button class="btn btn-success"><i class="icon-plus"></i> Add</button></a>
+        <!-- <a href="{{ route('garageAdmin.service.add') }}"><button class="btn btn-success"><i class="icon-plus"></i> Add</button></a> -->
       </div>
       <div class="col-sm-7">
         @if (Session::has('msg'))
@@ -56,8 +56,9 @@
             <td><span class="text-ellipsis">{{ $service->description }}</span></td>
             <td>{{ $service->price }}</td>
             <td style="width: 18%">
-              <a href="{{ route('garageAdmin.service.edit', ['id' => $service->id]) }}" class="active" ui-toggle-class=""><button class="btn btn-warning"><i class="icon-edit"></i> edit</button></a>
-              <a href="{{ route('garageAdmin.service.delete', ['id' => $service->id]) }}" class="active" ui-toggle-class=""><button class="btn btn-danger"><i class="icon-trash"></i> delete</button></a>
+              <a href="{{ route('garageAdmin.service.edit', ['id' => $service->id]) }}" class="active" ui-toggle-class=""><button class="btn btn-info"><i class=" fa fa-eye"></i> View Detail</button></a>
+              <!-- <a href="{{ route('garageAdmin.service.edit', ['id' => $service->id]) }}" class="active" ui-toggle-class=""><button class="btn btn-warning"><i class="icon-edit"></i> edit</button></a> -->
+              <!-- <a href="{{ route('garageAdmin.service.delete', ['id' => $service->id]) }}" class="active" ui-toggle-class=""><button class="btn btn-danger"><i class="icon-trash"></i> delete</button></a> -->
             </td>
           </tr>
           @endforeach

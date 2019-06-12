@@ -30,6 +30,11 @@
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
+        <li class="{{ route::currentRouteName() == 'admin.service' ? 'active' : '' }}">
+          <a href="{{ route('admin.service') }}">
+            <i class="fa fa-bar-chart-o"></i> <span>Service</span>
+          </a>
+        </li>
         <li class="{{ route::currentRouteName() == 'admin.garage' ? 'active' : '' }}">
           <a href="{{ route('admin.garage') }}">
             <i class="fa fa-book"></i> <span>Garage</span>

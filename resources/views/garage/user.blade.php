@@ -21,6 +21,17 @@
 					<p class="urna">Do you already have account?</p>
 					<h5>If you have an account, just enter your email and password.</h5>
 					<div class="test">
+						<p>Email</p>
+						<input type="text" name="email" class="input-tag" required=""><br>
+					</div>
+					<div class="test">
+						<p>Password</p>
+						<input type="password" name="password" class="input-tag" autocomplete="new-password" required=""><br>
+					</div>
+					<div class="abc" style="margin-top: 100px">
+						<h5>If not, please fill out the information.</h5>
+					</div>
+					<div class="test">
 						<p>User Name</p>
 						<input type="text" name="username" class="input-tag" autocomplete="false">
 					</div>
@@ -36,15 +47,7 @@
 						<p>Phone</p>
 						<input type="text" name="phone" class="input-tag"><br>
 					</div>
-					<div class="test">
-						<p>Email</p>
-						<input type="text" name="email" class="input-tag" required=""><br>
-					</div>
-					<div class="test">
-						<p>Password</p>
-						<input type="password" name="password" class="input-tag" autocomplete="new-password" required=""><br>
-					</div>
-					    <input type="submit" name="" value="next" class="submit">
+					<input type="submit" name="" value="next" class="submit">
 				</form>
 			</div>
 			<div class="clearfix"> </div>
@@ -97,6 +100,9 @@
 	}
 	.h2-tag {
 		margin: 6px 0px;
+	}
+	.w3agile_newsletter_right p {
+		    margin: 1em 0 0.5em 0;
 	}
 </style>
 @endsection

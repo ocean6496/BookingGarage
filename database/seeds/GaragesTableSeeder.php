@@ -24,7 +24,7 @@ class GaragesTableSeeder extends Seeder
         foreach ($garages as $key => $garage) {
             if ($key == 0) {
             	Garage::insert([
-            		'name' => $faker->name,
+            		'name' => 'Da Nang',
                     'address' => 'Hai Chau - Da Nang',
             		'phone' => $faker->phoneNumber,
             		'proprietor' => $faker->name,
@@ -33,7 +33,7 @@ class GaragesTableSeeder extends Seeder
             }
             if ($key == 1) {
                 Garage::insert([
-                    'name' => $faker->name,
+                    'name' => 'Ha Noi',
                     'address' => 'Hoan Kiem - Ha Noi',
                     'phone' => $faker->phoneNumber,
                     'proprietor' => $faker->name,
@@ -42,7 +42,7 @@ class GaragesTableSeeder extends Seeder
             }
             if ($key == 2) {
                 Garage::insert([
-                    'name' => $faker->name,
+                    'name' => 'Ho Chi Minh',
                     'address' => 'Quan 10 - Ho Chi Minh',
                     'phone' => $faker->phoneNumber,
                     'proprietor' => $faker->name,
@@ -51,7 +51,7 @@ class GaragesTableSeeder extends Seeder
             }
             if ($key == 3) {
                 Garage::insert([
-                    'name' => $faker->name,
+                    'name' => 'Hai Phong',
                     'address' => 'Hai Phong - Hai Phong',
                     'phone' => $faker->phoneNumber,
                     'proprietor' => $faker->name,
@@ -60,7 +60,7 @@ class GaragesTableSeeder extends Seeder
             }
             if ($key == 4) {
                 Garage::insert([
-                    'name' => $faker->name,
+                    'name' => 'Can Tho',
                     'address' => 'Ninh Kieu - Can Tho',
                     'phone' => $faker->phoneNumber,
                     'proprietor' => $faker->name,
