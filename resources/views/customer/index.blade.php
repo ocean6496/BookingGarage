@@ -57,7 +57,7 @@
                 @elseif($booking->checkout == 1 && $booking->status == 0) 
                     <td><button class="btn btn-success">Payment</button></td>
                 @elseif($booking->checkout == 1 && $booking->status == 1)
-                    <td><button class="btn btn-primary">Complete</button></td>
+                    <td><button class="btn btn-primary">Pending</button></td>
                 @endif
             </tr>
             @endforeach
